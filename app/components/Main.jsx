@@ -16,17 +16,35 @@ var Main = (props) => {
           <tr>
             <td>Tangerines</td>
             <td>2 for $0.25</td>
-            <td>0</td>
+            <td>
+              <div className="alert progress">
+                <span className="progress-meter" style={{width: '10%'}}>
+                  <p className="progress-meter-text">0</p>
+                </span>
+              </div>
+            </td>
           </tr>
           <tr>
             <td>Bread and Nutella</td>
             <td>$0.50</td>
-            <td>15</td>
+            <td>
+              <div className="success progress">
+                <span className="progress-meter" style={{width: '60%'}}>
+                  <p className="progress-meter-text">15</p>
+                </span>
+              </div>
+            </td>
           </tr>
           <tr>
             <td>Water bottle</td>
             <td>$0.75</td>
-            <td>20</td>
+            <td>
+              <div className="success progress">
+                <span className="progress-meter" style={{width: '70%'}}>
+                  <p className="progress-meter-text">20</p>
+                </span>
+              </div>
+            </td>
           </tr>
           <tr>
             <td>More items coming soon!!</td>
@@ -35,6 +53,7 @@ var Main = (props) => {
           </tr>
         </tbody>
       </table>
+      <h3 className="text-center">Web orders current in development!</h3>
     </div>
   );
 };

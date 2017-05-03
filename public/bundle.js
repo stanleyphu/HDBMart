@@ -19867,7 +19867,19 @@
 	          React.createElement(
 	            "td",
 	            null,
-	            "0"
+	            React.createElement(
+	              "div",
+	              { className: "alert progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '10%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "0"
+	                )
+	              )
+	            )
 	          )
 	        ),
 	        React.createElement(
@@ -19886,7 +19898,19 @@
 	          React.createElement(
 	            "td",
 	            null,
-	            "15"
+	            React.createElement(
+	              "div",
+	              { className: "success progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '60%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "15"
+	                )
+	              )
+	            )
 	          )
 	        ),
 	        React.createElement(
@@ -19905,7 +19929,19 @@
 	          React.createElement(
 	            "td",
 	            null,
-	            "20"
+	            React.createElement(
+	              "div",
+	              { className: "success progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '70%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "20"
+	                )
+	              )
+	            )
 	          )
 	        ),
 	        React.createElement(
@@ -19920,6 +19956,11 @@
 	          React.createElement("td", null)
 	        )
 	      )
+	    ),
+	    React.createElement(
+	      "h3",
+	      { className: "text-center" },
+	      "Web orders current in development!"
 	    )
 	  );
 	};
