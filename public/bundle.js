@@ -99,7 +99,7 @@
 	var Main = __webpack_require__(166);
 
 	// Load foundation
-	__webpack_require__(167);
+	__webpack_require__(168);
 	$(document).foundation();
 
 	ReactDOM.render(React.createElement(Main, null), document.getElementById('app'));
@@ -19809,19 +19809,48 @@
 /* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var React = __webpack_require__(8);
+	var ProductTable = __webpack_require__(167);
+
+	var Main = function Main(props) {
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(
+	      'h1',
+	      { className: 'text-center' },
+	      'GRAND OPENING'
+	    ),
+	    React.createElement(
+	      'h2',
+	      { className: 'text-center' },
+	      'Luu Run'
+	    ),
+	    React.createElement(ProductTable, null),
+	    React.createElement(
+	      'h3',
+	      { className: 'text-center' },
+	      'For any questions, please contact Kona Luu at kluu@greenlee.textron.com or find him in the Engineering Department.'
+	    )
+	  );
+	};
+
+	module.exports = Main;
+
+/***/ }),
+/* 167 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	"use strict";
 
 	var React = __webpack_require__(8);
 
-	var Main = function Main(props) {
+	var ProductTable = function ProductTable(props) {
 	  return React.createElement(
 	    "div",
 	    null,
-	    React.createElement(
-	      "h1",
-	      { className: "text-center" },
-	      "HDB Mart"
-	    ),
 	    React.createElement(
 	      "table",
 	      { className: "hover" },
@@ -19857,26 +19886,26 @@
 	          React.createElement(
 	            "td",
 	            null,
-	            "Tangerines"
+	            "Tangerines (2)"
 	          ),
 	          React.createElement(
 	            "td",
 	            null,
-	            "2 for $0.25"
+	            "$0.25"
 	          ),
 	          React.createElement(
 	            "td",
 	            null,
 	            React.createElement(
 	              "div",
-	              { className: "alert progress" },
+	              { className: "success progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '10%' } },
+	                { className: "progress-meter", style: { width: '64%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "0"
+	                  "16"
 	                )
 	              )
 	            )
@@ -19888,7 +19917,7 @@
 	          React.createElement(
 	            "td",
 	            null,
-	            "Bread and Nutella"
+	            "Bread with Nutella"
 	          ),
 	          React.createElement(
 	            "td",
@@ -19934,11 +19963,321 @@
 	              { className: "success progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '70%' } },
+	                { className: "progress-meter", style: { width: '80%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
 	                  "20"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Emergen-C Packet (Orange)"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.50"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "warning progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '32%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "8"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Bagel with Cream Cheese"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$1.00"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "warning progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '24%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "6"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Hershey's Cookies & Cream"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.85"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "alert progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '8%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "2"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Gatorade (Lemon-Lime)"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$1.00"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "warning progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '20%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "5"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Trident Gum (2)"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.25"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "success progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '40%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "10"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Cheetos Crunchy"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.25"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "success progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '64%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "16"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Lays Classic"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.25"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "success progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '48%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "12"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Fritos Original"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.25"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "success progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '40%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "10"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Doritos Nacho Cheese"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.25"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "success progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '32%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "8"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Lays Sour Cream & Onion"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.25"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "alert progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '16%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "4"
 	                )
 	              )
 	            )
@@ -19956,28 +20295,23 @@
 	          React.createElement("td", null)
 	        )
 	      )
-	    ),
-	    React.createElement(
-	      "h3",
-	      { className: "text-center" },
-	      "Web orders current in development!"
 	    )
 	  );
 	};
 
-	module.exports = Main;
+	module.exports = ProductTable;
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(168);
+	var content = __webpack_require__(169);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(170)(content, {});
+	var update = __webpack_require__(171)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -19994,10 +20328,10 @@
 	}
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(169)();
+	exports = module.exports = __webpack_require__(170)();
 	// imports
 
 
@@ -20008,7 +20342,7 @@
 
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports) {
 
 	/*
@@ -20064,7 +20398,7 @@
 
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
