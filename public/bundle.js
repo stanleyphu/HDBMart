@@ -19820,12 +19820,12 @@
 	    null,
 	    React.createElement(
 	      'h1',
-	      { className: 'alert text-center' },
+	      { className: 'text-center', style: { 'color': 'red' } },
 	      'GRAND OPENING'
 	    ),
 	    React.createElement(
 	      'h2',
-	      { className: 'text-center' },
+	      { className: 'text-center', style: { 'color': 'blue' } },
 	      'Luu\'s FuErDai'
 	    ),
 	    React.createElement(ProductTable, null),
@@ -20327,12 +20327,12 @@
 	        React.createElement(
 	          "tr",
 	          null,
+	          React.createElement("td", null),
 	          React.createElement(
 	            "td",
 	            null,
-	            "More items coming soon!!"
+	            "*Stock levels may not be up to date"
 	          ),
-	          React.createElement("td", null),
 	          React.createElement("td", null)
 	        )
 	      )

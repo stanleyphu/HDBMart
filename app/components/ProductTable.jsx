@@ -167,8 +167,8 @@ var ProductTable = (props) => {
             </td>
           </tr>
           <tr>
-            <td>More items coming soon!!</td>
             <td></td>
+            <td>*Stock levels may not be up to date</td>
             <td></td>
           </tr>
         </tbody>
