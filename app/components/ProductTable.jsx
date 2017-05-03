@@ -14,11 +14,22 @@ var ProductTable = (props) => {
         <tbody>
           <tr>
             <td>Tangerines (2)</td>
-            <td>$0.25</td>
+            <td><del style={{'color': 'red'}}>$0.50</del> $0.25</td>
             <td>
               <div className="success progress">
                 <span className="progress-meter" style={{width: '64%'}}>
                   <p className="progress-meter-text">16</p>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Banana</td>
+            <td><del style={{'color': 'red'}}>$0.50</del> $0.25</td>
+            <td>
+              <div className="warning progress">
+                <span className="progress-meter" style={{width: '36%'}}>
+                  <p className="progress-meter-text">9</p>
                 </span>
               </div>
             </td>

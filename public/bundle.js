@@ -19891,7 +19891,12 @@
 	          React.createElement(
 	            "td",
 	            null,
-	            "$0.25"
+	            React.createElement(
+	              "del",
+	              { style: { 'color': 'red' } },
+	              "$0.50"
+	            ),
+	            " $0.25"
 	          ),
 	          React.createElement(
 	            "td",
@@ -19906,6 +19911,42 @@
 	                  "p",
 	                  { className: "progress-meter-text" },
 	                  "16"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Banana"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "del",
+	              { style: { 'color': 'red' } },
+	              "$0.50"
+	            ),
+	            " $0.25"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "warning progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '36%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "9"
 	                )
 	              )
 	            )
