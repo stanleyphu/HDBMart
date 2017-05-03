@@ -19819,7 +19819,7 @@
 	    null,
 	    React.createElement(
 	      "h1",
-	      null,
+	      { className: "text-center" },
 	      "HDB Mart"
 	    ),
 	    React.createElement(
@@ -19840,6 +19840,11 @@
 	            "th",
 	            { width: "200" },
 	            "Price"
+	          ),
+	          React.createElement(
+	            "th",
+	            { width: "100" },
+	            "Stock"
 	          )
 	        )
 	      ),
@@ -19858,6 +19863,11 @@
 	            "td",
 	            null,
 	            "2 for $0.25"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "0"
 	          )
 	        ),
 	        React.createElement(
@@ -19872,7 +19882,42 @@
 	            "td",
 	            null,
 	            "$0.50"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "15"
 	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Water bottle"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.75"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "20"
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "More items coming soon!!"
+	          ),
+	          React.createElement("td", null),
+	          React.createElement("td", null)
 	        )
 	      )
 	    )
