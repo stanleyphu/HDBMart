@@ -19820,19 +19820,19 @@
 	    null,
 	    React.createElement(
 	      'h1',
-	      { className: 'text-center' },
+	      { className: 'alert text-center' },
 	      'GRAND OPENING'
 	    ),
 	    React.createElement(
 	      'h2',
 	      { className: 'text-center' },
-	      'Luu Run'
+	      'Luu\'s FuErDai'
 	    ),
 	    React.createElement(ProductTable, null),
 	    React.createElement(
 	      'h3',
 	      { className: 'text-center' },
-	      'For any questions, please contact Kona Luu at kluu@greenlee.textron.com or find him in the Engineering Department.'
+	      'For any questions, please contact Kona Luu, CEO, by e-mail or Lync at kluu@greenlee.textron.com.'
 	    )
 	  );
 	};
