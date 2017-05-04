@@ -206,15 +206,6 @@ var ProductTable = (props) => {
           </tr>
         </tbody>
       </table>
-      <table>
-        <thead>
-          <tr>
-            <th width="200">Breakfast</th>
-            <th width="200"></th>
-            <th width="100"></th>
-          </tr>
-        </thead>
-      </table>
     </div>
   );
 };

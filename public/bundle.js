@@ -20434,25 +20434,6 @@
 	          React.createElement("td", null)
 	        )
 	      )
-	    ),
-	    React.createElement(
-	      "table",
-	      null,
-	      React.createElement(
-	        "thead",
-	        null,
-	        React.createElement(
-	          "tr",
-	          null,
-	          React.createElement(
-	            "th",
-	            { width: "200" },
-	            "Breakfast"
-	          ),
-	          React.createElement("th", { width: "200" }),
-	          React.createElement("th", { width: "100" })
-	        )
-	      )
 	    )
 	  );
 	};
