@@ -19828,9 +19828,14 @@
 	      { className: 'text-center', style: { 'color': 'blue' } },
 	      'Luu\'s FuErDai'
 	    ),
-	    React.createElement(ProductTable, null),
 	    React.createElement(
 	      'h3',
+	      { className: 'text-center' },
+	      'TODAY ONLY: FREE CHOCOLATE TEDDY GRAHAM CRACKERS W/ ANY PURCHASE OF BAGELS, NUTELLA, OR CHIPS'
+	    ),
+	    React.createElement(ProductTable, null),
+	    React.createElement(
+	      'h4',
 	      { className: 'text-center' },
 	      'For any questions, please contact Kona Luu, CEO, by e-mail or Lync at kluu@greenlee.textron.com.'
 	    )
@@ -19867,7 +19872,7 @@
 	          ),
 	          React.createElement(
 	            "th",
-	            { width: "200" },
+	            { width: "100" },
 	            "Price"
 	          ),
 	          React.createElement(
@@ -19906,11 +19911,11 @@
 	              { className: "success progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '64%' } },
+	                { className: "progress-meter", style: { width: '56%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "16"
+	                  "14"
 	                )
 	              )
 	            )
@@ -19942,11 +19947,11 @@
 	              { className: "warning progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '36%' } },
+	                { className: "progress-meter", style: { width: '24%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "9"
+	                  "6"
 	                )
 	              )
 	            )
@@ -19973,11 +19978,11 @@
 	              { className: "success progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '60%' } },
+	                { className: "progress-meter", style: { width: '40%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "15"
+	                  "10"
 	                )
 	              )
 	            )
@@ -19989,26 +19994,26 @@
 	          React.createElement(
 	            "td",
 	            null,
-	            "Water bottle"
+	            "Everything Bagel with Cream Cheese"
 	          ),
 	          React.createElement(
 	            "td",
 	            null,
-	            "$0.75"
+	            "$1.00"
 	          ),
 	          React.createElement(
 	            "td",
 	            null,
 	            React.createElement(
 	              "div",
-	              { className: "success progress" },
+	              { className: "alert progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '80%' } },
+	                { className: "progress-meter", style: { width: '4%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "20"
+	                  "1"
 	                )
 	              )
 	            )
@@ -20020,38 +20025,7 @@
 	          React.createElement(
 	            "td",
 	            null,
-	            "Emergen-C Packet (Orange)"
-	          ),
-	          React.createElement(
-	            "td",
-	            null,
-	            "$0.50"
-	          ),
-	          React.createElement(
-	            "td",
-	            null,
-	            React.createElement(
-	              "div",
-	              { className: "warning progress" },
-	              React.createElement(
-	                "span",
-	                { className: "progress-meter", style: { width: '32%' } },
-	                React.createElement(
-	                  "p",
-	                  { className: "progress-meter-text" },
-	                  "8"
-	                )
-	              )
-	            )
-	          )
-	        ),
-	        React.createElement(
-	          "tr",
-	          null,
-	          React.createElement(
-	            "td",
-	            null,
-	            "Bagel with Cream Cheese"
+	            "Cinnamon Bagel with Cream Cheese"
 	          ),
 	          React.createElement(
 	            "td",
@@ -20113,37 +20087,6 @@
 	          React.createElement(
 	            "td",
 	            null,
-	            "Gatorade (Lemon-Lime)"
-	          ),
-	          React.createElement(
-	            "td",
-	            null,
-	            "$1.00"
-	          ),
-	          React.createElement(
-	            "td",
-	            null,
-	            React.createElement(
-	              "div",
-	              { className: "warning progress" },
-	              React.createElement(
-	                "span",
-	                { className: "progress-meter", style: { width: '20%' } },
-	                React.createElement(
-	                  "p",
-	                  { className: "progress-meter-text" },
-	                  "5"
-	                )
-	              )
-	            )
-	          )
-	        ),
-	        React.createElement(
-	          "tr",
-	          null,
-	          React.createElement(
-	            "td",
-	            null,
 	            "Trident Gum (2)"
 	          ),
 	          React.createElement(
@@ -20190,11 +20133,11 @@
 	              { className: "success progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '64%' } },
+	                { className: "progress-meter", style: { width: '60%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "16"
+	                  "15"
 	                )
 	              )
 	            )
@@ -20221,11 +20164,11 @@
 	              { className: "success progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '48%' } },
+	                { className: "progress-meter", style: { width: '44%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "12"
+	                  "11"
 	                )
 	              )
 	            )
@@ -20283,11 +20226,11 @@
 	              { className: "success progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '32%' } },
+	                { className: "progress-meter", style: { width: '28%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "8"
+	                  "7"
 	                )
 	              )
 	            )
@@ -20314,11 +20257,166 @@
 	              { className: "alert progress" },
 	              React.createElement(
 	                "span",
+	                { className: "progress-meter", style: { width: '12%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "3"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Water bottle"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.75"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "success progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '80%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "20"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Gatorade (Lemon-Lime)"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$1.00"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "warning progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '32%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "8"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Starbucks Mocha Frappuccino"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$2.00"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "alert progress" },
+	              React.createElement(
+	                "span",
 	                { className: "progress-meter", style: { width: '16%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
 	                  "4"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Hensen Diet Soda (Cherry) - NO CALORIES OR SUGAR"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.75"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "warning progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '32%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "8"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "td",
+	            null,
+	            "Emergen-C Packet (Orange)"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            "$0.50"
+	          ),
+	          React.createElement(
+	            "td",
+	            null,
+	            React.createElement(
+	              "div",
+	              { className: "warning progress" },
+	              React.createElement(
+	                "span",
+	                { className: "progress-meter", style: { width: '32%' } },
+	                React.createElement(
+	                  "p",
+	                  { className: "progress-meter-text" },
+	                  "8"
 	                )
 	              )
 	            )
@@ -20334,6 +20432,25 @@
 	            "*Stock levels may not be up to date"
 	          ),
 	          React.createElement("td", null)
+	        )
+	      )
+	    ),
+	    React.createElement(
+	      "table",
+	      null,
+	      React.createElement(
+	        "thead",
+	        null,
+	        React.createElement(
+	          "tr",
+	          null,
+	          React.createElement(
+	            "th",
+	            { width: "200" },
+	            "Breakfast"
+	          ),
+	          React.createElement("th", { width: "200" }),
+	          React.createElement("th", { width: "100" })
 	        )
 	      )
 	    )

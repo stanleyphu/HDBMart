@@ -7,7 +7,7 @@ var ProductTable = (props) => {
         <thead>
           <tr>
             <th width="200">Product</th>
-            <th width="200">Price</th>
+            <th width="100">Price</th>
             <th width="100">Stock</th>
           </tr>
         </thead>
@@ -17,8 +17,8 @@ var ProductTable = (props) => {
             <td><del style={{'color': 'red'}}>$0.50</del> $0.25</td>
             <td>
               <div className="success progress">
-                <span className="progress-meter" style={{width: '64%'}}>
-                  <p className="progress-meter-text">16</p>
+                <span className="progress-meter" style={{width: '56%'}}>
+                  <p className="progress-meter-text">14</p>
                 </span>
               </div>
             </td>
@@ -28,8 +28,8 @@ var ProductTable = (props) => {
             <td><del style={{'color': 'red'}}>$0.50</del> $0.25</td>
             <td>
               <div className="warning progress">
-                <span className="progress-meter" style={{width: '36%'}}>
-                  <p className="progress-meter-text">9</p>
+                <span className="progress-meter" style={{width: '24%'}}>
+                  <p className="progress-meter-text">6</p>
                 </span>
               </div>
             </td>
@@ -39,36 +39,25 @@ var ProductTable = (props) => {
             <td>$0.50</td>
             <td>
               <div className="success progress">
-                <span className="progress-meter" style={{width: '60%'}}>
-                  <p className="progress-meter-text">15</p>
+                <span className="progress-meter" style={{width: '40%'}}>
+                  <p className="progress-meter-text">10</p>
                 </span>
               </div>
             </td>
           </tr>
           <tr>
-            <td>Water bottle</td>
-            <td>$0.75</td>
+            <td>Everything Bagel with Cream Cheese</td>
+            <td>$1.00</td>
             <td>
-              <div className="success progress">
-                <span className="progress-meter" style={{width: '80%'}}>
-                  <p className="progress-meter-text">20</p>
+              <div className="alert progress">
+                <span className="progress-meter" style={{width: '4%'}}>
+                  <p className="progress-meter-text">1</p>
                 </span>
               </div>
             </td>
           </tr>
           <tr>
-            <td>Emergen-C Packet (Orange)</td>
-            <td>$0.50</td>
-            <td>
-              <div className="warning progress">
-                <span className="progress-meter" style={{width: '32%'}}>
-                  <p className="progress-meter-text">8</p>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Bagel with Cream Cheese</td>
+            <td>Cinnamon Bagel with Cream Cheese</td>
             <td>$1.00</td>
             <td>
               <div className="warning progress">
@@ -90,17 +79,6 @@ var ProductTable = (props) => {
             </td>
           </tr>
           <tr>
-            <td>Gatorade (Lemon-Lime)</td>
-            <td>$1.00</td>
-            <td>
-              <div className="warning progress">
-                <span className="progress-meter" style={{width: '20%'}}>
-                  <p className="progress-meter-text">5</p>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr>
             <td>Trident Gum (2)</td>
             <td>$0.25</td>
             <td>
@@ -116,8 +94,8 @@ var ProductTable = (props) => {
             <td>$0.25</td>
             <td>
               <div className="success progress">
-                <span className="progress-meter" style={{width: '64%'}}>
-                  <p className="progress-meter-text">16</p>
+                <span className="progress-meter" style={{width: '60%'}}>
+                  <p className="progress-meter-text">15</p>
                 </span>
               </div>
             </td>
@@ -127,8 +105,8 @@ var ProductTable = (props) => {
             <td>$0.25</td>
             <td>
               <div className="success progress">
-                <span className="progress-meter" style={{width: '48%'}}>
-                  <p className="progress-meter-text">12</p>
+                <span className="progress-meter" style={{width: '44%'}}>
+                  <p className="progress-meter-text">11</p>
                 </span>
               </div>
             </td>
@@ -149,8 +127,8 @@ var ProductTable = (props) => {
             <td>$0.25</td>
             <td>
               <div className="success progress">
-                <span className="progress-meter" style={{width: '32%'}}>
-                  <p className="progress-meter-text">8</p>
+                <span className="progress-meter" style={{width: '28%'}}>
+                  <p className="progress-meter-text">7</p>
                 </span>
               </div>
             </td>
@@ -160,8 +138,63 @@ var ProductTable = (props) => {
             <td>$0.25</td>
             <td>
               <div className="alert progress">
+                <span className="progress-meter" style={{width: '12%'}}>
+                  <p className="progress-meter-text">3</p>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Water bottle</td>
+            <td>$0.75</td>
+            <td>
+              <div className="success progress">
+                <span className="progress-meter" style={{width: '80%'}}>
+                  <p className="progress-meter-text">20</p>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Gatorade (Lemon-Lime)</td>
+            <td>$1.00</td>
+            <td>
+              <div className="warning progress">
+                <span className="progress-meter" style={{width: '32%'}}>
+                  <p className="progress-meter-text">8</p>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Starbucks Mocha Frappuccino</td>
+            <td>$2.00</td>
+            <td>
+              <div className="alert progress">
                 <span className="progress-meter" style={{width: '16%'}}>
                   <p className="progress-meter-text">4</p>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Hensen Diet Soda (Cherry) - NO CALORIES OR SUGAR</td>
+            <td>$0.75</td>
+            <td>
+              <div className="warning progress">
+                <span className="progress-meter" style={{width: '32%'}}>
+                  <p className="progress-meter-text">8</p>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Emergen-C Packet (Orange)</td>
+            <td>$0.50</td>
+            <td>
+              <div className="warning progress">
+                <span className="progress-meter" style={{width: '32%'}}>
+                  <p className="progress-meter-text">8</p>
                 </span>
               </div>
             </td>
@@ -172,6 +205,15 @@ var ProductTable = (props) => {
             <td></td>
           </tr>
         </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th width="200">Breakfast</th>
+            <th width="200"></th>
+            <th width="100"></th>
+          </tr>
+        </thead>
       </table>
     </div>
   );
