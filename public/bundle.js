@@ -19834,7 +19834,7 @@
 	      { className: 'text-center' },
 	      'For any questions, please contact Kona Luu, CEO, by e-mail or Lync at kluu@greenlee.textron.com.'
 	    ),
-	    React.createElement('img', { src: 'http://imgur.com/Ewfr3Id' })
+	    React.createElement('img', { src: 'https://preview.ibb.co/k6DWAk/kona_luu.jpg', alt: 'kona luu', border: '0', style: { display: 'block', margin: '0 auto' } })
 	  );
 	};
 
