@@ -13,23 +13,12 @@ var ProductTable = (props) => {
         </thead>
         <tbody>
           <tr>
-            <td>Tangerines (2)</td>
-            <td><del style={{'color': 'red'}}>$0.50</del> $0.25</td>
+            <td>Apple</td>
+            <td>$0.25</td>
             <td>
-              <div className="success progress">
-                <span className="progress-meter" style={{width: '56%'}}>
-                  <p className="progress-meter-text">14</p>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Banana</td>
-            <td><del style={{'color': 'red'}}>$0.50</del> $0.25</td>
-            <td>
-              <div className="warning progress">
-                <span className="progress-meter" style={{width: '24%'}}>
-                  <p className="progress-meter-text">6</p>
+              <div className="alert progress">
+                <span className="progress-meter" style={{width: '8%'}}>
+                  <p className="progress-meter-text">2</p>
                 </span>
               </div>
             </td>
@@ -47,17 +36,6 @@ var ProductTable = (props) => {
           </tr>
           <tr>
             <td>Everything Bagel with Cream Cheese</td>
-            <td>$1.00</td>
-            <td>
-              <div className="alert progress">
-                <span className="progress-meter" style={{width: '4%'}}>
-                  <p className="progress-meter-text">1</p>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Cinnamon Bagel with Cream Cheese</td>
             <td>$1.00</td>
             <td>
               <div className="warning progress">
@@ -126,9 +104,9 @@ var ProductTable = (props) => {
             <td>Doritos Nacho Cheese</td>
             <td>$0.25</td>
             <td>
-              <div className="success progress">
-                <span className="progress-meter" style={{width: '28%'}}>
-                  <p className="progress-meter-text">7</p>
+              <div className="alert progress">
+                <span className="progress-meter" style={{width: '20%'}}>
+                  <p className="progress-meter-text">5</p>
                 </span>
               </div>
             </td>
@@ -138,8 +116,8 @@ var ProductTable = (props) => {
             <td>$0.25</td>
             <td>
               <div className="alert progress">
-                <span className="progress-meter" style={{width: '12%'}}>
-                  <p className="progress-meter-text">3</p>
+                <span className="progress-meter" style={{width: '8%'}}>
+                  <p className="progress-meter-text">2</p>
                 </span>
               </div>
             </td>
@@ -182,8 +160,8 @@ var ProductTable = (props) => {
             <td>$0.75</td>
             <td>
               <div className="warning progress">
-                <span className="progress-meter" style={{width: '32%'}}>
-                  <p className="progress-meter-text">8</p>
+                <span className="progress-meter" style={{width: '28%'}}>
+                  <p className="progress-meter-text">7</p>
                 </span>
               </div>
             </td>
@@ -193,8 +171,8 @@ var ProductTable = (props) => {
             <td>$0.50</td>
             <td>
               <div className="warning progress">
-                <span className="progress-meter" style={{width: '32%'}}>
-                  <p className="progress-meter-text">8</p>
+                <span className="progress-meter" style={{width: '24%'}}>
+                  <p className="progress-meter-text">6</p>
                 </span>
               </div>
             </td>
@@ -211,3 +189,16 @@ var ProductTable = (props) => {
 };
 
 module.exports = ProductTable;
+
+
+/* <tr>
+  <td>Tangerines (2)</td>
+  <td><del style={{'color': 'red'}}>$0.50</del> $0.25</td>
+  <td>
+    <div className="success progress">
+      <span className="progress-meter" style={{width: '48%'}}>
+        <p className="progress-meter-text">12</p>
+      </span>
+    </div>
+  </td>
+</tr> */

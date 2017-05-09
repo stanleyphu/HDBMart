@@ -19828,17 +19828,13 @@
 	      { className: 'text-center', style: { 'color': 'blue' } },
 	      'Luu\'s FuErDai'
 	    ),
-	    React.createElement(
-	      'h3',
-	      { className: 'text-center' },
-	      'TODAY ONLY: FREE CHOCOLATE TEDDY GRAHAM CRACKERS W/ ANY PURCHASE OF BAGELS, NUTELLA, OR CHIPS'
-	    ),
 	    React.createElement(ProductTable, null),
 	    React.createElement(
 	      'h4',
 	      { className: 'text-center' },
 	      'For any questions, please contact Kona Luu, CEO, by e-mail or Lync at kluu@greenlee.textron.com.'
-	    )
+	    ),
+	    React.createElement('img', { src: 'http://imgur.com/Ewfr3Id' })
 	  );
 	};
 
@@ -19891,67 +19887,26 @@
 	          React.createElement(
 	            "td",
 	            null,
-	            "Tangerines (2)"
+	            "Apple"
 	          ),
 	          React.createElement(
 	            "td",
 	            null,
-	            React.createElement(
-	              "del",
-	              { style: { 'color': 'red' } },
-	              "$0.50"
-	            ),
-	            " $0.25"
-	          ),
-	          React.createElement(
-	            "td",
-	            null,
-	            React.createElement(
-	              "div",
-	              { className: "success progress" },
-	              React.createElement(
-	                "span",
-	                { className: "progress-meter", style: { width: '56%' } },
-	                React.createElement(
-	                  "p",
-	                  { className: "progress-meter-text" },
-	                  "14"
-	                )
-	              )
-	            )
-	          )
-	        ),
-	        React.createElement(
-	          "tr",
-	          null,
-	          React.createElement(
-	            "td",
-	            null,
-	            "Banana"
-	          ),
-	          React.createElement(
-	            "td",
-	            null,
-	            React.createElement(
-	              "del",
-	              { style: { 'color': 'red' } },
-	              "$0.50"
-	            ),
-	            " $0.25"
+	            "$0.25"
 	          ),
 	          React.createElement(
 	            "td",
 	            null,
 	            React.createElement(
 	              "div",
-	              { className: "warning progress" },
+	              { className: "alert progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '24%' } },
+	                { className: "progress-meter", style: { width: '8%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "6"
+	                  "2"
 	                )
 	              )
 	            )
@@ -19995,37 +19950,6 @@
 	            "td",
 	            null,
 	            "Everything Bagel with Cream Cheese"
-	          ),
-	          React.createElement(
-	            "td",
-	            null,
-	            "$1.00"
-	          ),
-	          React.createElement(
-	            "td",
-	            null,
-	            React.createElement(
-	              "div",
-	              { className: "alert progress" },
-	              React.createElement(
-	                "span",
-	                { className: "progress-meter", style: { width: '4%' } },
-	                React.createElement(
-	                  "p",
-	                  { className: "progress-meter-text" },
-	                  "1"
-	                )
-	              )
-	            )
-	          )
-	        ),
-	        React.createElement(
-	          "tr",
-	          null,
-	          React.createElement(
-	            "td",
-	            null,
-	            "Cinnamon Bagel with Cream Cheese"
 	          ),
 	          React.createElement(
 	            "td",
@@ -20223,14 +20147,14 @@
 	            null,
 	            React.createElement(
 	              "div",
-	              { className: "success progress" },
+	              { className: "alert progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '28%' } },
+	                { className: "progress-meter", style: { width: '20%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "7"
+	                  "5"
 	                )
 	              )
 	            )
@@ -20257,11 +20181,11 @@
 	              { className: "alert progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '12%' } },
+	                { className: "progress-meter", style: { width: '8%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "3"
+	                  "2"
 	                )
 	              )
 	            )
@@ -20381,11 +20305,11 @@
 	              { className: "warning progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '32%' } },
+	                { className: "progress-meter", style: { width: '28%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "8"
+	                  "7"
 	                )
 	              )
 	            )
@@ -20412,11 +20336,11 @@
 	              { className: "warning progress" },
 	              React.createElement(
 	                "span",
-	                { className: "progress-meter", style: { width: '32%' } },
+	                { className: "progress-meter", style: { width: '24%' } },
 	                React.createElement(
 	                  "p",
 	                  { className: "progress-meter-text" },
-	                  "8"
+	                  "6"
 	                )
 	              )
 	            )
@@ -20439,6 +20363,18 @@
 	};
 
 	module.exports = ProductTable;
+
+	/* <tr>
+	  <td>Tangerines (2)</td>
+	  <td><del style={{'color': 'red'}}>$0.50</del> $0.25</td>
+	  <td>
+	    <div className="success progress">
+	      <span className="progress-meter" style={{width: '48%'}}>
+	        <p className="progress-meter-text">12</p>
+	      </span>
+	    </div>
+	  </td>
+	</tr> */
 
 /***/ }),
 /* 168 */
