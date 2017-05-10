@@ -19980,7 +19980,42 @@
 	              React.createElement(
 	                'a',
 	                { 'data-open': 'bagelModal', style: { color: 'black', display: 'block' } },
-	                'Everything Bagel with Cream Cheese'
+	                'Everything Bagel with Cream Cheese (Strawberry or Regular)'
+	              )
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$1.00'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'alert progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '4%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '1'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'a',
+	                { 'data-open': 'bagelModal', style: { color: 'black', display: 'block' } },
+	                'Wheat Bagel with Cream Cheese (Strawberry or Regular)'
 	              )
 	            ),
 	            React.createElement(
@@ -20014,6 +20049,41 @@
 	              null,
 	              React.createElement(
 	                'a',
+	                { 'data-open': 'bagelModal', style: { color: 'black', display: 'block' } },
+	                'Cinnamon Bagel with Cream Cheese (Strawberry or Regular)'
+	              )
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$1.00'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'alert progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '4%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '1'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'a',
 	                { 'data-open': 'hersheysccModal', style: { color: 'black', display: 'block' } },
 	                'Hershey\'s Cookies & Cream'
 	              )
@@ -20031,11 +20101,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '8%' } },
+	                  { className: 'progress-meter', style: { width: '4%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '2'
+	                    '1'
 	                  )
 	                )
 	              )
@@ -20132,11 +20202,11 @@
 	                { className: 'success progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '44%' } },
+	                  { className: 'progress-meter', style: { width: '40%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '11'
+	                    '10'
 	                  )
 	                )
 	              )
@@ -20303,11 +20373,11 @@
 	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '32%' } },
+	                  { className: 'progress-meter', style: { width: '28%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '8'
+	                    '7'
 	                  )
 	                )
 	              )
