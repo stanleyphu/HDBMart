@@ -6,6 +6,8 @@ var Main = require('Main');
 require('style!css!foundation-sites/dist/css/foundation.min.css')
 $(document).foundation();
 
+require('style!css!applicationStyles');
+
 ReactDOM.render(
   <Main />,
   document.getElementById('app')

@@ -23,7 +23,8 @@ module.exports = {
     root: __dirname,
     alias: {
       Main: 'app/components/Main.jsx',
-      ProductTable: 'app/components/ProductTable.jsx'
+      ProductTable: 'app/components/ProductTable.jsx',
+      applicationStyles: 'app/styles/app.css'
     },
     extensions: ['', '.js', '.jsx']
   },
