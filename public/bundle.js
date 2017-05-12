@@ -19958,49 +19958,14 @@
 	              null,
 	              React.createElement(
 	                'div',
-	                { className: 'success progress' },
+	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '40%' } },
+	                  { className: 'progress-meter', style: { width: '32%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '10'
-	                  )
-	                )
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            'tr',
-	            null,
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(
-	                'a',
-	                { 'data-open': 'bagelModal', style: { color: 'black', display: 'block' } },
-	                'Everything Bagel with Cream Cheese (Strawberry or Regular)'
-	              )
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              '$1.00'
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(
-	                'div',
-	                { className: 'alert progress' },
-	                React.createElement(
-	                  'span',
-	                  { className: 'progress-meter', style: { width: '4%' } },
-	                  React.createElement(
-	                    'p',
-	                    { className: 'progress-meter-text' },
-	                    '1'
+	                    '8'
 	                  )
 	                )
 	              )
@@ -20028,14 +19993,14 @@
 	              null,
 	              React.createElement(
 	                'div',
-	                { className: 'warning progress' },
+	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '24%' } },
+	                  { className: 'progress-meter', style: { width: '20%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '6'
+	                    '5'
 	                  )
 	                )
 	              )
@@ -20167,11 +20132,11 @@
 	                { className: 'success progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '60%' } },
+	                  { className: 'progress-meter', style: { width: '56%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '15'
+	                    '14'
 	                  )
 	                )
 	              )
@@ -20199,14 +20164,14 @@
 	              null,
 	              React.createElement(
 	                'div',
-	                { className: 'success progress' },
+	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '40%' } },
+	                  { className: 'progress-meter', style: { width: '36%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '10'
+	                    '9'
 	                  )
 	                )
 	              )
@@ -20277,41 +20242,6 @@
 	                    'p',
 	                    { className: 'progress-meter-text' },
 	                    '5'
-	                  )
-	                )
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            'tr',
-	            null,
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(
-	                'a',
-	                { 'data-open': 'laysscModal', style: { color: 'black', display: 'block' } },
-	                'Lays Sour Cream & Onion'
-	              )
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              '$0.25'
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(
-	                'div',
-	                { className: 'alert progress' },
-	                React.createElement(
-	                  'span',
-	                  { className: 'progress-meter', style: { width: '4%' } },
-	                  React.createElement(
-	                    'p',
-	                    { className: 'progress-meter-text' },
-	                    '1'
 	                  )
 	                )
 	              )
@@ -20440,14 +20370,14 @@
 	              null,
 	              React.createElement(
 	                'div',
-	                { className: 'warning progress' },
+	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '24%' } },
+	                  { className: 'progress-meter', style: { width: '16%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '6'
+	                    '4'
 	                  )
 	                )
 	              )
