@@ -139,9 +139,8 @@ var ProductTable = React.createClass({
               </td>
             </tr>
             <tr>
-            <tr>
               <td>Hot Cheetos</td>
-              <td>$0.25</td>
+              <td>$0.50</td>
               <td>
                 <div className="success progress">
                   <span className="progress-meter" style={{width: '48%'}}>
@@ -152,7 +151,7 @@ var ProductTable = React.createClass({
             </tr>
             <tr>
               <td>Hot Cheetos w/ Lime</td>
-              <td>$0.25</td>
+              <td>$0.50</td>
               <td>
                 <div className="warning progress">
                   <span className="progress-meter" style={{width: '24%'}}>
@@ -163,7 +162,7 @@ var ProductTable = React.createClass({
             </tr>
             <tr>
               <td>Funyuns (Flamin Hot)</td>
-              <td>$0.25</td>
+              <td>$0.50</td>
               <td>
                 <div className="alert progress">
                   <span className="progress-meter" style={{width: '20%'}}>
@@ -171,10 +170,10 @@ var ProductTable = React.createClass({
                   </span>
                 </div>
               </td>
-            </tr> 
+            </tr>
             <tr>
               <td>Fritos (Flamin Hot)</td>
-              <td>$0.25</td>
+              <td>$0.50</td>
               <td>
                 <div className="warning progress">
                   <span className="progress-meter" style={{width: '24%'}}>
@@ -182,7 +181,7 @@ var ProductTable = React.createClass({
                   </span>
                 </div>
               </td>
-            </tr>                
+            </tr>
             <tr>
               <td>Water bottle</td>
               <td>$0.75</td>
