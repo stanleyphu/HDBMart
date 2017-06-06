@@ -19817,6 +19817,10 @@
 	var ProductTable = __webpack_require__(167);
 
 	var Main = function Main(props) {
+	  var username = 'konaluu';
+	  var amount = '.25';
+	  var link = 'https://venmo.com/?txn=pay&audience=friends&recipients=' + username + '&amount=' + amount;
+
 	  return React.createElement(
 	    'div',
 	    null,
@@ -19904,41 +19908,6 @@
 	              null,
 	              React.createElement(
 	                'a',
-	                { 'data-open': 'appleModal', style: { color: 'black', display: 'block' } },
-	                'Apple'
-	              )
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              '$0.25'
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(
-	                'div',
-	                { className: 'alert progress' },
-	                React.createElement(
-	                  'span',
-	                  { className: 'progress-meter', style: { width: '8%' } },
-	                  React.createElement(
-	                    'p',
-	                    { className: 'progress-meter-text' },
-	                    '2'
-	                  )
-	                )
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            'tr',
-	            null,
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(
-	                'a',
 	                { 'data-open': 'nutellaBreadModal', style: { color: 'black', display: 'block' } },
 	                'Bread with Nutella'
 	              )
@@ -19975,48 +19944,13 @@
 	              React.createElement(
 	                'a',
 	                { 'data-open': 'bagelModal', style: { color: 'black', display: 'block' } },
-	                'Wheat Bagel with Cream Cheese (Strawberry or Regular)'
+	                'Everything Bagel with Cream Cheese (Strawberry or Regular)'
 	              )
 	            ),
 	            React.createElement(
 	              'td',
 	              null,
-	              '$1.00'
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(
-	                'div',
-	                { className: 'alert progress' },
-	                React.createElement(
-	                  'span',
-	                  { className: 'progress-meter', style: { width: '8%' } },
-	                  React.createElement(
-	                    'p',
-	                    { className: 'progress-meter-text' },
-	                    '2'
-	                  )
-	                )
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            'tr',
-	            null,
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(
-	                'a',
-	                { 'data-open': 'bagelModal', style: { color: 'black', display: 'block' } },
-	                'Cinnamon Bagel with Cream Cheese (Strawberry or Regular)'
-	              )
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              '$1.00'
+	              '$1.25'
 	            ),
 	            React.createElement(
 	              'td',
@@ -20031,6 +19965,72 @@
 	                    'p',
 	                    { className: 'progress-meter-text' },
 	                    '1'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'a',
+	                { 'data-open': 'bagelModal', style: { color: 'black', display: 'block' } },
+	                'Plain Bagel with Cream Cheese (Strawberry or Regular)'
+	              )
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$1.00'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'warning progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '24%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '6'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Cup Noodles (Chicken Flavor)'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.75'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'alert progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '20%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '5'
 	                  )
 	                )
 	              )
@@ -20124,14 +20124,14 @@
 	              null,
 	              React.createElement(
 	                'div',
-	                { className: 'success progress' },
+	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '40%' } },
+	                  { className: 'progress-meter', style: { width: '36%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '10'
+	                    '9'
 	                  )
 	                )
 	              )
@@ -20162,11 +20162,11 @@
 	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '28%' } },
+	                  { className: 'progress-meter', style: { width: '24%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '7'
+	                    '6'
 	                  )
 	                )
 	              )
@@ -20232,11 +20232,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '12%' } },
+	                  { className: 'progress-meter', style: { width: '8%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '3'
+	                    '2'
 	                  )
 	                )
 	              )
@@ -20325,11 +20325,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '20%' } },
+	                  { className: 'progress-meter', style: { width: '12%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '5'
+	                    '3'
 	                  )
 	                )
 	              )
@@ -20457,11 +20457,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '16%' } },
+	                  { className: 'progress-meter', style: { width: '12%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '4'
+	                    '3'
 	                  )
 	                )
 	              )
@@ -20476,7 +20476,7 @@
 	              React.createElement(
 	                'a',
 	                { 'data-open': 'dietHansenModal', style: { color: 'black', display: 'block' } },
-	                'Hensen Diet Soda (Cherry) - NO CALORIES OR SUGAR'
+	                'Hansen Diet Soda (Cherry) - NO CALORIES OR SUGAR'
 	              )
 	            ),
 	            React.createElement(
@@ -20497,6 +20497,37 @@
 	                    'p',
 	                    { className: 'progress-meter-text' },
 	                    '4'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Hansen Soda (Orange)'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.75'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'warning progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '28%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '7'
 	                  )
 	                )
 	              )

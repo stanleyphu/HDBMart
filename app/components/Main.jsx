@@ -2,6 +2,10 @@ var React = require('react');
 var ProductTable = require('ProductTable');
 
 var Main = (props) => {
+  var username = 'konaluu';
+  var amount = '.25';
+  var link = `https://venmo.com/?txn=pay&audience=friends&recipients=${username}&amount=${amount}`;
+
   return (
     <div>
       <h1 className="text-center" style={{'color': 'blue'}}>Luu's FuErDai</h1>
