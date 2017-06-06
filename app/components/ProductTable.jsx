@@ -52,7 +52,7 @@ var ProductTable = React.createClass({
             </tr>
             <tr>
               <td><a data-open="bagelModal" style={{color: 'black', display: 'block'}}>Plain Bagel with Cream Cheese (Strawberry or Regular)</a></td>
-              <td>$1.00</td>
+              <td>$1.25</td>
               <td>
                 <div className="warning progress">
                   <span className="progress-meter" style={{width: '24%'}}>

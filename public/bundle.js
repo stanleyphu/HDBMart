@@ -19985,7 +19985,7 @@
 	            React.createElement(
 	              'td',
 	              null,
-	              '$1.00'
+	              '$1.25'
 	            ),
 	            React.createElement(
 	              'td',
