@@ -5,7 +5,6 @@ var ProductTable = React.createClass({
     new Foundation.Reveal($('#appleModal'));
     new Foundation.Reveal($('#bagelModal'));
     new Foundation.Reveal($('#cheetosModal'));
-    new Foundation.Reveal($('#doritosModal'));
     new Foundation.Reveal($('#emergencModal'));
     new Foundation.Reveal($('#fritosModal'));
     new Foundation.Reveal($('#gatoradeModal'));
@@ -15,6 +14,7 @@ var ProductTable = React.createClass({
     new Foundation.Reveal($('#laysClassicModal'));
     new Foundation.Reveal($('#starbucksMochaFrapModal'));
     new Foundation.Reveal($('#nutellaBreadModal'));
+    new Foundation.Reveal($('#doritosDinamitaModal'));
   },
   render: function() {
     return (
@@ -28,7 +28,7 @@ var ProductTable = React.createClass({
             </tr>
           </thead>
           <tbody>
-            {/*<tr>
+            <tr>
               <td><a data-open="nutellaBreadModal" style={{color: 'black', display: 'block'}}>Bread with Nutella</a></td>
               <td>$0.50</td>
               <td>
@@ -40,27 +40,27 @@ var ProductTable = React.createClass({
               </td>
             </tr>
             <tr>
-              <td><a data-open="bagelModal" style={{color: 'black', display: 'block'}}>Everything Bagel with Cream Cheese (Strawberry or Regular)</a></td>
+              <td><a data-open="bagelModal" style={{color: 'black', display: 'block'}}>Everything Bagel with Cream Cheese</a></td>
               <td>$1.25</td>
               <td>
                 <div className="alert progress">
-                  <span className="progress-meter" style={{width: '4%'}}>
-                    <p className="progress-meter-text">1</p>
+                  <span className="progress-meter" style={{width: '16%'}}>
+                    <p className="progress-meter-text">4</p>
                   </span>
                 </div>
               </td>
             </tr>
             <tr>
-              <td><a data-open="bagelModal" style={{color: 'black', display: 'block'}}>Plain Bagel with Cream Cheese (Strawberry or Regular)</a></td>
+              <td><a data-open="bagelModal" style={{color: 'black', display: 'block'}}>Plain Bagel with Cream Cheese</a></td>
               <td>$1.25</td>
               <td>
-                <div className="warning progress">
-                  <span className="progress-meter" style={{width: '24%'}}>
-                    <p className="progress-meter-text">6</p>
+                <div className="alert progress">
+                  <span className="progress-meter" style={{width: '12%'}}>
+                    <p className="progress-meter-text">3</p>
                   </span>
                 </div>
               </td>
-            </tr>*/}
+            </tr>
             <tr>
               <td><a data-open="hersheysccModal" style={{color: 'black', display: 'block'}}>Hershey's Cookies & Cream</a></td>
               <td>$0.85</td>
@@ -116,17 +116,17 @@ var ProductTable = React.createClass({
                 </div>
               </td>
             </tr>
-            {/*<tr>
-              <td><a data-open="doritosModal" style={{color: 'black', display: 'block'}}>Doritos Nacho Cheese</a></td>
-              <td>$0.25</td>
+            <tr>
+              <td>Lay's (Flamin Hot)</td>
+              <td>$0.35</td>
               <td>
                 <div className="alert progress">
-                  <span className="progress-meter" style={{width: '8%'}}>
-                    <p className="progress-meter-text">2</p>
+                  <span className="progress-meter" style={{width: '12%'}}>
+                    <p className="progress-meter-text">3</p>
                   </span>
                 </div>
               </td>
-            </tr>*/}
+            </tr>
             <tr>
               <td>Hot Cheetos</td>
               <td>$0.50</td>
@@ -149,17 +149,28 @@ var ProductTable = React.createClass({
                 </div>
               </td>
             </tr>
-            {/*<tr>
+            <tr>
               <td>Funyuns (Flamin Hot)</td>
-              <td>$0.50</td>
+              <td>$0.35</td>
               <td>
                 <div className="alert progress">
-                  <span className="progress-meter" style={{width: '12%'}}>
-                    <p className="progress-meter-text">3</p>
+                  <span className="progress-meter" style={{width: '8%'}}>
+                    <p className="progress-meter-text">2</p>
                   </span>
                 </div>
               </td>
-            </tr>*/}
+            </tr>
+            <tr>
+              <td><a data-open="doritosDinamitaModal" style={{color: 'black', display: 'block'}}>Doritos Dinamita</a></td>
+              <td>$0.35</td>
+              <td>
+                <div className="alert progress">
+                  <span className="progress-meter" style={{width: '16%'}}>
+                    <p className="progress-meter-text">4</p>
+                  </span>
+                </div>
+              </td>
+            </tr>
             <tr>
               <td>Fritos (Flamin Hot)</td>
               <td>$0.50</td>
@@ -267,13 +278,6 @@ var ProductTable = React.createClass({
           </button>
         </div>
 
-        <div className="reveal" id="doritosModal" data-reveal="">
-          <img src="https://image.ibb.co/eeUWbQ/doritos.jpg" alt="doritos" border="0" id="doritos" />
-          <button className="close-button" data-close="" aria-label="Close modal" type="button">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
         <div className="reveal" id="emergencModal" data-reveal="">
           <img src="https://image.ibb.co/jpuKVk/Emergen_C.jpg" alt="emergenc" border="0" id="emergenc" />
           <button className="close-button" data-close="" aria-label="Close modal" type="button">
@@ -336,6 +340,15 @@ var ProductTable = React.createClass({
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+
+        <div className="reveal" id="doritosDinamitaModal" data-reveal="">
+          <img src="http://image.ibb.co/fLzWTQ/9e258f75_9991_4a8e_951e_a67ff991d659_1_027d94fd31bcf81764669c45e229678b.jpg" alt="doritosDinamita" border="0" id="doritosDinamita" />
+          <button className="close-button" data-close="" aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        
 
       </div>
     );
