@@ -20100,11 +20100,11 @@
 	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '36%' } },
+	                  { className: 'progress-meter', style: { width: '28%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '9'
+	                    '7'
 	                  )
 	                )
 	              )
@@ -20135,11 +20135,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '20%' } },
+	                  { className: 'progress-meter', style: { width: '8%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '5'
+	                    '2'
 	                  )
 	                )
 	              )
@@ -20170,11 +20170,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '20%' } },
+	                  { className: 'progress-meter', style: { width: '4%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '5'
+	                    '1'
 	                  )
 	                )
 	              )
@@ -20186,7 +20186,7 @@
 	            React.createElement(
 	              'td',
 	              null,
-	              'Lay\'s (Flamin Hot)'
+	              'Flaming Hot Lay\'s (Medium Size)'
 	            ),
 	            React.createElement(
 	              'td',
@@ -20217,26 +20217,26 @@
 	            React.createElement(
 	              'td',
 	              null,
-	              'Hot Cheetos'
+	              'Flaming Hot Funyuns (Medium Size)'
 	            ),
 	            React.createElement(
 	              'td',
 	              null,
-	              '$0.50'
+	              '$0.35'
 	            ),
 	            React.createElement(
 	              'td',
 	              null,
 	              React.createElement(
 	                'div',
-	                { className: 'success progress' },
+	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '48%' } },
+	                  { className: 'progress-meter', style: { width: '8%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '12'
+	                    '2'
 	                  )
 	                )
 	              )
@@ -20248,26 +20248,26 @@
 	            React.createElement(
 	              'td',
 	              null,
-	              'Hot Cheetos w/ Lime'
+	              'Flaming Hot Cheetos (Medium Size)'
 	            ),
 	            React.createElement(
 	              'td',
 	              null,
-	              '$0.50'
+	              '$0.35'
 	            ),
 	            React.createElement(
 	              'td',
 	              null,
 	              React.createElement(
 	                'div',
-	                { className: 'warning progress' },
+	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '24%' } },
+	                  { className: 'progress-meter', style: { width: '16%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '6'
+	                    '4'
 	                  )
 	                )
 	              )
@@ -20279,7 +20279,7 @@
 	            React.createElement(
 	              'td',
 	              null,
-	              'Funyuns (Flamin Hot)'
+	              'Flaming Hot Lime Cheetos (Medium Size)'
 	            ),
 	            React.createElement(
 	              'td',
@@ -20313,7 +20313,7 @@
 	              React.createElement(
 	                'a',
 	                { 'data-open': 'doritosDinamitaModal', style: { color: 'black', display: 'block' } },
-	                'Doritos Dinamita'
+	                'Doritos Dinamita Lemon Chile (Medium Size)'
 	              )
 	            ),
 	            React.createElement(
@@ -20345,7 +20345,38 @@
 	            React.createElement(
 	              'td',
 	              null,
-	              'Fritos (Flamin Hot)'
+	              'Cheetos Cheddar Jalapenos (Medium Size)'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.35'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'alert progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '16%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '4'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Flaming Hot Cheetos (Large Size)'
 	            ),
 	            React.createElement(
 	              'td',
@@ -20360,11 +20391,228 @@
 	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '24%' } },
+	                  { className: 'progress-meter', style: { width: '28%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '6'
+	                    '7'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Flaming Hot Lime Cheetos (Large Size)'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.50'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'warning progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '8%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '2'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Flaming Hot Fritos (Large Size)'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.50'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'warning progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '20%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '5'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Fruit Grain Mixed Berry Bar'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.35'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'warning progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '28%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '7'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Chocolate Chip Chewy Bar'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.25'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'warning progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '32%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '8'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Siracha Chicken Flavor Cup Noodle'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.50'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'warning progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '12%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '3'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Lime Chili Flavor Cup Noodle'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.50'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'warning progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '8%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '2'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Kopiko Coffee Candy (2)'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.25'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'success progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '40%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '10'
 	                  )
 	                )
 	              )
@@ -20426,11 +20674,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '16%' } },
+	                  { className: 'progress-meter', style: { width: '8%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '4'
+	                    '2'
 	                  )
 	                )
 	              )
@@ -20461,11 +20709,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '12%' } },
+	                  { className: 'progress-meter', style: { width: '4%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '3'
+	                    '1'
 	                  )
 	                )
 	              )
@@ -20527,11 +20775,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '16%' } },
+	                  { className: 'progress-meter', style: { width: '8%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '4'
+	                    '2'
 	                  )
 	                )
 	              )
@@ -20579,7 +20827,7 @@
 	            React.createElement(
 	              'td',
 	              null,
-	              '*Stock levels may not be up to date'
+	              '*Stock levels may not be up to date.'
 	            ),
 	            React.createElement('td', null)
 	          )
