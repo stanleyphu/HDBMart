@@ -20062,14 +20062,14 @@
 	              null,
 	              React.createElement(
 	                'div',
-	                { className: 'success progress' },
+	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '40%' } },
+	                  { className: 'progress-meter', style: { width: '24%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '10'
+	                    '6'
 	                  )
 	                )
 	              )
@@ -20100,11 +20100,11 @@
 	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '28%' } },
+	                  { className: 'progress-meter', style: { width: '24%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '7'
+	                    '6'
 	                  )
 	                )
 	              )
@@ -20205,7 +20205,7 @@
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '3'
+	                    '2'
 	                  )
 	                )
 	              )
@@ -20294,11 +20294,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '8%' } },
+	                  { className: 'progress-meter', style: { width: '4%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '2'
+	                    '1'
 	                  )
 	                )
 	              )
@@ -20422,11 +20422,11 @@
 	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '8%' } },
+	                  { className: 'progress-meter', style: { width: '4%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '2'
+	                    '1'
 	                  )
 	                )
 	              )
@@ -20458,6 +20458,37 @@
 	                    'p',
 	                    { className: 'progress-meter-text' },
 	                    '5'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Fruit Snacks Healthy (2)'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.25'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'success progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '60%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '15'
 	                  )
 	                )
 	              )
@@ -20582,6 +20613,37 @@
 	                    'p',
 	                    { className: 'progress-meter-text' },
 	                    '2'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Hot and Spicy Tom Yum Cup Noodles'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$0.75'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'warning progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '24%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '6'
 	                  )
 	                )
 	              )

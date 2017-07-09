@@ -76,9 +76,9 @@ var ProductTable = React.createClass({
               <td>Trident Gum (2)</td>
               <td>$0.25</td>
               <td>
-                <div className="success progress">
-                  <span className="progress-meter" style={{width: '40%'}}>
-                    <p className="progress-meter-text">10</p>
+                <div className="warning progress">
+                  <span className="progress-meter" style={{width: '24%'}}>
+                    <p className="progress-meter-text">6</p>
                   </span>
                 </div>
               </td>
@@ -88,8 +88,8 @@ var ProductTable = React.createClass({
               <td>$0.25</td>
               <td>
                 <div className="warning progress">
-                  <span className="progress-meter" style={{width: '28%'}}>
-                    <p className="progress-meter-text">7</p>
+                  <span className="progress-meter" style={{width: '24%'}}>
+                    <p className="progress-meter-text">6</p>
                   </span>
                 </div>
               </td>
@@ -122,7 +122,7 @@ var ProductTable = React.createClass({
               <td>
                 <div className="alert progress">
                   <span className="progress-meter" style={{width: '12%'}}>
-                    <p className="progress-meter-text">3</p>
+                    <p className="progress-meter-text">2</p>
                   </span>
                 </div>
               </td>
@@ -154,8 +154,8 @@ var ProductTable = React.createClass({
               <td>$0.35</td>
               <td>
                 <div className="alert progress">
-                  <span className="progress-meter" style={{width: '8%'}}>
-                    <p className="progress-meter-text">2</p>
+                  <span className="progress-meter" style={{width: '4%'}}>
+                    <p className="progress-meter-text">1</p>
                   </span>
                 </div>
               </td>
@@ -198,8 +198,8 @@ var ProductTable = React.createClass({
               <td>$0.50</td>
               <td>
                 <div className="warning progress">
-                  <span className="progress-meter" style={{width: '8%'}}>
-                    <p className="progress-meter-text">2</p>
+                  <span className="progress-meter" style={{width: '4%'}}>
+                    <p className="progress-meter-text">1</p>
                   </span>
                 </div>
               </td>
@@ -211,6 +211,17 @@ var ProductTable = React.createClass({
                 <div className="warning progress">
                   <span className="progress-meter" style={{width: '20%'}}>
                     <p className="progress-meter-text">5</p>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Fruit Snacks Healthy (2)</td>
+              <td>$0.25</td>
+              <td>
+                <div className="success progress">
+                  <span className="progress-meter" style={{width: '60%'}}>
+                    <p className="progress-meter-text">15</p>
                   </span>
                 </div>
               </td>
@@ -255,6 +266,17 @@ var ProductTable = React.createClass({
                 <div className="warning progress">
                   <span className="progress-meter" style={{width: '8%'}}>
                     <p className="progress-meter-text">2</p>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Hot and Spicy Tom Yum Cup Noodles</td>
+              <td>$0.75</td>
+              <td>
+                <div className="warning progress">
+                  <span className="progress-meter" style={{width: '24%'}}>
+                    <p className="progress-meter-text">6</p>
                   </span>
                 </div>
               </td>
