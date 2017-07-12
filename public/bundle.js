@@ -19968,7 +19968,7 @@
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '4'
+	                    '2'
 	                  )
 	                )
 	              )
@@ -19999,11 +19999,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '12%' } },
+	                  { className: 'progress-meter', style: { width: '0%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '3'
+	                    '0'
 	                  )
 	                )
 	              )
@@ -20360,11 +20360,11 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '16%' } },
+	                  { className: 'progress-meter', style: { width: '12%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '4'
+	                    '3'
 	                  )
 	                )
 	              )
@@ -20546,11 +20546,11 @@
 	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '32%' } },
+	                  { className: 'progress-meter', style: { width: '28%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '8'
+	                    '7'
 	                  )
 	                )
 	              )
@@ -20639,11 +20639,11 @@
 	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '24%' } },
+	                  { className: 'progress-meter', style: { width: '20%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '6'
+	                    '5'
 	                  )
 	                )
 	              )
@@ -20803,14 +20803,14 @@
 	              null,
 	              React.createElement(
 	                'div',
-	                { className: 'alert progress' },
+	                { className: 'warning progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '8%' } },
+	                  { className: 'progress-meter', style: { width: '28%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '2'
+	                    '7'
 	                  )
 	                )
 	              )
@@ -20837,11 +20837,42 @@
 	                { className: 'alert progress' },
 	                React.createElement(
 	                  'span',
-	                  { className: 'progress-meter', style: { width: '8%' } },
+	                  { className: 'progress-meter', style: { width: '12%' } },
 	                  React.createElement(
 	                    'p',
 	                    { className: 'progress-meter-text' },
-	                    '2'
+	                    '3'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              'Sanpelligrino (Orange)'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              '$1.00'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'div',
+	                { className: 'warning progress' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'progress-meter', style: { width: '24%' } },
+	                  React.createElement(
+	                    'p',
+	                    { className: 'progress-meter-text' },
+	                    '6'
 	                  )
 	                )
 	              )

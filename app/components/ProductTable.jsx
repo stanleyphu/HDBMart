@@ -45,7 +45,7 @@ var ProductTable = React.createClass({
               <td>
                 <div className="alert progress">
                   <span className="progress-meter" style={{width: '16%'}}>
-                    <p className="progress-meter-text">4</p>
+                    <p className="progress-meter-text">2</p>
                   </span>
                 </div>
               </td>
@@ -55,8 +55,8 @@ var ProductTable = React.createClass({
               <td>$1.25</td>
               <td>
                 <div className="alert progress">
-                  <span className="progress-meter" style={{width: '12%'}}>
-                    <p className="progress-meter-text">3</p>
+                  <span className="progress-meter" style={{width: '0%'}}>
+                    <p className="progress-meter-text">0</p>
                   </span>
                 </div>
               </td>
@@ -176,8 +176,8 @@ var ProductTable = React.createClass({
               <td>$0.35</td>
               <td>
                 <div className="alert progress">
-                  <span className="progress-meter" style={{width: '16%'}}>
-                    <p className="progress-meter-text">4</p>
+                  <span className="progress-meter" style={{width: '12%'}}>
+                    <p className="progress-meter-text">3</p>
                   </span>
                 </div>
               </td>
@@ -242,8 +242,8 @@ var ProductTable = React.createClass({
               <td>$0.25</td>
               <td>
                 <div className="warning progress">
-                  <span className="progress-meter" style={{width: '32%'}}>
-                    <p className="progress-meter-text">8</p>
+                  <span className="progress-meter" style={{width: '28%'}}>
+                    <p className="progress-meter-text">7</p>
                   </span>
                 </div>
               </td>
@@ -275,8 +275,8 @@ var ProductTable = React.createClass({
               <td>$0.75</td>
               <td>
                 <div className="warning progress">
-                  <span className="progress-meter" style={{width: '24%'}}>
-                    <p className="progress-meter-text">6</p>
+                  <span className="progress-meter" style={{width: '20%'}}>
+                    <p className="progress-meter-text">5</p>
                   </span>
                 </div>
               </td>
@@ -329,9 +329,9 @@ var ProductTable = React.createClass({
               <td><a data-open="dietHansenModal" style={{color: 'black', display: 'block'}}>Hansen Diet Soda (Orange Lime) - NO CALORIES OR SUGAR</a></td>
               <td>$0.75</td>
               <td>
-                <div className="alert progress">
-                  <span className="progress-meter" style={{width: '8%'}}>
-                    <p className="progress-meter-text">2</p>
+                <div className="warning progress">
+                  <span className="progress-meter" style={{width: '28%'}}>
+                    <p className="progress-meter-text">7</p>
                   </span>
                 </div>
               </td>
@@ -341,8 +341,19 @@ var ProductTable = React.createClass({
               <td>$0.75</td>
               <td>
                 <div className="alert progress">
-                  <span className="progress-meter" style={{width: '8%'}}>
-                    <p className="progress-meter-text">2</p>
+                  <span className="progress-meter" style={{width: '12%'}}>
+                    <p className="progress-meter-text">3</p>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Sanpelligrino (Orange)</td>
+              <td>$1.00</td>
+              <td>
+                <div className="warning progress">
+                  <span className="progress-meter" style={{width: '24%'}}>
+                    <p className="progress-meter-text">6</p>
                   </span>
                 </div>
               </td>
