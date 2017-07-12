@@ -24,6 +24,7 @@ module.exports = {
     alias: {
       Main: 'app/components/Main.jsx',
       ProductTable: 'app/components/ProductTable.jsx',
+      ShoppingCart: 'app/components/ShoppingCart.jsx',
       applicationStyles: 'app/styles/app.css'
     },
     extensions: ['', '.js', '.jsx']

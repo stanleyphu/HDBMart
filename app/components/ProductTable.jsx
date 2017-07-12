@@ -16,6 +16,13 @@ var ProductTable = React.createClass({
     new Foundation.Reveal($('#nutellaBreadModal'));
     new Foundation.Reveal($('#doritosDinamitaModal'));
   },
+  handleClick: function (e) {
+    e.preventDefault();
+    //var itemName = this.refs.nutella.value;
+    console.log(e);
+    //console.log(this.refs);
+    //alert(itemID);
+  },
   render: function() {
     return (
       <div>
@@ -25,12 +32,13 @@ var ProductTable = React.createClass({
               <th width="200">Product</th>
               <th width="100">Price</th>
               <th width="100">Stock</th>
+              <th width="50"></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><a data-open="nutellaBreadModal" style={{color: 'black', display: 'block'}}>Bread with Nutella</a></td>
-              <td>$0.50</td>
+              <td><p onClick={this.handleClick} ref="nutella" id="nutella">$0.50</p></td>
               <td>
                 <div className="warning progress">
                   <span className="progress-meter" style={{width: '32%'}}>
@@ -458,7 +466,7 @@ var ProductTable = React.createClass({
           </button>
         </div>
 
-        
+
 
       </div>
     );
