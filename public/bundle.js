@@ -439,6 +439,10 @@
 	process.removeListener = noop;
 	process.removeAllListeners = noop;
 	process.emit = noop;
+	process.prependListener = noop;
+	process.prependOnceListener = noop;
+
+	process.listeners = function (name) { return [] }
 
 	process.binding = function (name) {
 	    throw new Error('process.binding is not supported');
@@ -19813,6 +19817,8 @@
 
 	'use strict';
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 	var React = __webpack_require__(8);
 	var ProductTable = __webpack_require__(167);
 	var ShoppingCart = __webpack_require__(168);
@@ -19824,6 +19830,13 @@
 	    return {
 	      items: []
 	    };
+	  },
+	  handleAddItem: function handleAddItem(id) {
+	    this.setState({
+	      items: [].concat(_toConsumableArray(this.state.items), [{
+	        name: id
+	      }])
+	    });
 	  },
 	  render: function render() {
 	    var username = 'konaluu';
@@ -19838,7 +19851,7 @@
 	        { className: 'text-center', style: { 'color': 'blue' } },
 	        'Luu\'s FuErDai'
 	      ),
-	      React.createElement(ProductTable, null),
+	      React.createElement(ProductTable, { onAddItem: this.handleAddItem }),
 	      React.createElement(ShoppingCart, { items: this.state.items }),
 	      React.createElement(
 	        'h4',
@@ -19881,7 +19894,8 @@
 	  handleClick: function handleClick(e) {
 	    e.preventDefault();
 	    //var itemName = this.refs.nutella.value;
-	    console.log(e);
+	    console.log(e.target.id);
+	    this.props.onAddItem(e.target.id);
 	    //console.log(this.refs);
 	    //alert(itemID);
 	  },
@@ -19955,6 +19969,15 @@
 	                    '8'
 	                  )
 	                )
+	              )
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'button',
+	                { onClick: this.handleClick, type: 'button', id: 'nutella' },
+	                'Add'
 	              )
 	            )
 	          ),
@@ -21133,7 +21156,7 @@
 	      return items.map(function (item) {
 	        return React.createElement(
 	          'p',
-	          null,
+	          { key: item.name },
 	          item.name
 	        );
 	      });

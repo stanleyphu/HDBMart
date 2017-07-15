@@ -19,7 +19,8 @@ var ProductTable = React.createClass({
   handleClick: function (e) {
     e.preventDefault();
     //var itemName = this.refs.nutella.value;
-    console.log(e);
+    console.log(e.target.id);
+    this.props.onAddItem(e.target.id);
     //console.log(this.refs);
     //alert(itemID);
   },
@@ -46,6 +47,7 @@ var ProductTable = React.createClass({
                   </span>
                 </div>
               </td>
+              <td><button onClick={this.handleClick} type="button" id="nutella">Add</button></td>
             </tr>
             <tr>
               <td><a data-open="bagelModal" style={{color: 'black', display: 'block'}}>Everything Bagel with Cream Cheese</a></td>

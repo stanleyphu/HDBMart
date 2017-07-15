@@ -8,6 +8,16 @@ var Main = React.createClass({
       items: []
     }
   },
+  handleAddItem: function (id) {
+    this.setState({
+      items: [
+        ...this.state.items,
+        {
+          name: id
+        }
+      ]
+    });
+  },
   render: function () {
     var username = 'konaluu';
     var amount = '.25';
@@ -16,7 +26,7 @@ var Main = React.createClass({
     return (
       <div>
         <h1 className="text-center" style={{'color': 'blue'}}>Luu's FuErDai</h1>
-        <ProductTable />
+        <ProductTable onAddItem={this.handleAddItem}/>
         <ShoppingCart items={this.state.items}/>
         <h4 className="text-center">For any questions, please contact Kona Luu, CEO, by e-mail or Lync at kluu@greenlee.textron.com.</h4>
         <img src="https://preview.ibb.co/k6DWAk/kona_luu.jpg" alt="kona luu" border="0" id="kona-luu" />

@@ -6,7 +6,7 @@ var ShoppingCart = React.createClass({
     var renderItems = () => {
       return items.map((item) => {
         return (
-          <p>{item.name}</p>
+          <p key={item.name}>{item.name}</p>
         );
       });
     };
