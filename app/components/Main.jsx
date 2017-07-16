@@ -29,7 +29,7 @@ var Main = React.createClass({
     }
   },
   render: function () {
-    var username = 'konaluu';
+    var username = 'kona-luu';
     var amount = 0.00;
     var note = '';
     for (var i = 0; i < this.state.items.length; i++) {
@@ -43,15 +43,26 @@ var Main = React.createClass({
     var link = `https://venmo.com/?txn=pay&audience=friends&recipients=${username}&amount=${amount}&note=${note}`;
     console.log(link);
 
+    var renderShoppingCart = () => {
+      var {items} = this.state;
+
+      if (items.length > 0)
+        return (
+          <div>
+            <h3 className="text-center">Shopping Cart</h3>
+            <ShoppingCart id="shoppingCart" items={items}/>
+            <a href={link} className="button" id="purchaseButton">Purchase Items</a>
+          </div>
+        );
+    };
+
     return (
       <div>
         <h1 className="text-center" style={{'color': 'blue'}}>Luu's FuErDai</h1>
         <ProductTable onAddItem={this.handleAddItem} inventory={this.state.inventory}/>
-        <h3 className="text-center">Shopping Cart</h3>
-        <ShoppingCart items={this.state.items}/>
-        <a href={link} className="button" id="purchaseButton">Purchase Items</a>
-        <h4 className="text-center">For any questions, please contact Kona Luu, CEO, by e-mail or Lync at kluu@greenlee.textron.com.</h4>
+        {renderShoppingCart()}
         <img src="https://preview.ibb.co/k6DWAk/kona_luu.jpg" alt="kona luu" border="0" id="kona-luu" />
+        <h4 className="text-center">For any questions, please contact Kona Luu, CEO, by e-mail or Lync at kluu@greenlee.textron.com.</h4>
       </div>
     );
   }

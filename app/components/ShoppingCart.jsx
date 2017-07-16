@@ -6,7 +6,7 @@ var ShoppingCart = React.createClass({
     var renderItems = () => {
       return items.map((item) => {
         return (
-          <tr>
+          <tr key={item.id}>
             <td>{item.name}</td>
             <td>{item.price}</td>
           </tr>

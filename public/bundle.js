@@ -19845,7 +19845,9 @@
 	    }
 	  },
 	  render: function render() {
-	    var username = 'konaluu';
+	    var _this = this;
+
+	    var username = 'kona-luu';
 	    var amount = 0.00;
 	    var note = '';
 	    for (var i = 0; i < this.state.items.length; i++) {
@@ -19859,6 +19861,27 @@
 	    var link = 'https://venmo.com/?txn=pay&audience=friends&recipients=' + username + '&amount=' + amount + '&note=' + note;
 	    console.log(link);
 
+	    var renderShoppingCart = function renderShoppingCart() {
+	      var items = _this.state.items;
+
+
+	      if (items.length > 0) return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'h3',
+	          { className: 'text-center' },
+	          'Shopping Cart'
+	        ),
+	        React.createElement(ShoppingCart, { id: 'shoppingCart', items: items }),
+	        React.createElement(
+	          'a',
+	          { href: link, className: 'button', id: 'purchaseButton' },
+	          'Purchase Items'
+	        )
+	      );
+	    };
+
 	    return React.createElement(
 	      'div',
 	      null,
@@ -19868,23 +19891,13 @@
 	        'Luu\'s FuErDai'
 	      ),
 	      React.createElement(ProductTable, { onAddItem: this.handleAddItem, inventory: this.state.inventory }),
-	      React.createElement(
-	        'h3',
-	        { className: 'text-center' },
-	        'Shopping Cart'
-	      ),
-	      React.createElement(ShoppingCart, { items: this.state.items }),
-	      React.createElement(
-	        'a',
-	        { href: link, className: 'button', id: 'purchaseButton' },
-	        'Purchase Items'
-	      ),
+	      renderShoppingCart(),
+	      React.createElement('img', { src: 'https://preview.ibb.co/k6DWAk/kona_luu.jpg', alt: 'kona luu', border: '0', id: 'kona-luu' }),
 	      React.createElement(
 	        'h4',
 	        { className: 'text-center' },
 	        'For any questions, please contact Kona Luu, CEO, by e-mail or Lync at kluu@greenlee.textron.com.'
-	      ),
-	      React.createElement('img', { src: 'https://preview.ibb.co/k6DWAk/kona_luu.jpg', alt: 'kona luu', border: '0', id: 'kona-luu' })
+	      )
 	    );
 	  }
 	});
@@ -28582,6 +28595,7 @@
 	var ShoppingCart = React.createClass({
 	  displayName: "ShoppingCart",
 
+	  componentDidMount: function componentDidMount() {},
 	  render: function render() {
 	    var items = this.props.items;
 
@@ -28589,7 +28603,7 @@
 	      return items.map(function (item) {
 	        return React.createElement(
 	          "tr",
-	          null,
+	          { key: item.id },
 	          React.createElement(
 	            "td",
 	            null,
