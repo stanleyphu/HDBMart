@@ -6,14 +6,27 @@ var ShoppingCart = React.createClass({
     var renderItems = () => {
       return items.map((item) => {
         return (
-          <p key={item.name}>{item.name}</p>
+          <tr>
+            <td>{item.name}</td>
+            <td>{item.price}</td>
+          </tr>
         );
       });
     };
 
     return (
-      <div>
-        {renderItems()}
+      <div id="shoppingCart">
+        <table className="hover stack">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {renderItems()}
+          </tbody>
+        </table>
       </div>
     );
   }

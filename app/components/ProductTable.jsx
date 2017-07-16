@@ -1,5 +1,7 @@
 var React = require('react');
 
+var InventoryItem = require('InventoryItem');
+
 var ProductTable = React.createClass({
   componentDidMount: function() {
     new Foundation.Reveal($('#appleModal'));
@@ -16,30 +18,41 @@ var ProductTable = React.createClass({
     new Foundation.Reveal($('#nutellaBreadModal'));
     new Foundation.Reveal($('#doritosDinamitaModal'));
   },
-  handleClick: function (e) {
-    e.preventDefault();
-    //var itemName = this.refs.nutella.value;
-    console.log(e.target.id);
-    this.props.onAddItem(e.target.id);
-    //console.log(this.refs);
-    //alert(itemID);
+  handleAddItem: function (id) {
+      //e.preventDefault();
+      //console.log(e.target.id);
+      //this.props.onAddItem(e.target.id);
+    this.props.onAddItem(id);
   },
   render: function() {
+    var {inventory} = this.props;
+
+    var renderInventory = () => {
+      return inventory.map((item) => {
+        var priceValue = item.price.toFixed(2);
+        return (
+          <InventoryItem key={item.id} name={item.name} price={priceValue} stock={item.stock} onAddItem={this.handleAddItem}/>
+        );
+      });
+    };
+
     return (
       <div>
-        <table className="hover">
+        <table className="hover stack">
           <thead>
             <tr>
-              <th width="200">Product</th>
-              <th width="100">Price</th>
-              <th width="100">Stock</th>
-              <th width="50"></th>
+              <th width="500">Product</th>
+              <th width="200">Price</th>
+              <th width="200">Stock</th>
+              <th width="100"></th>
             </tr>
           </thead>
           <tbody>
+            {renderInventory()}
+            {/*
             <tr>
               <td><a data-open="nutellaBreadModal" style={{color: 'black', display: 'block'}}>Bread with Nutella</a></td>
-              <td><p onClick={this.handleClick} ref="nutella" id="nutella">$0.50</p></td>
+              <td>$0.50</td>
               <td>
                 <div className="warning progress">
                   <span className="progress-meter" style={{width: '32%'}}>
@@ -47,7 +60,7 @@ var ProductTable = React.createClass({
                   </span>
                 </div>
               </td>
-              <td><button onClick={this.handleClick} type="button" id="nutella">Add</button></td>
+              <td><button onClick={this.handleClick} type="button" className="primary button" id="Bread with Nutella">Add</button></td>
             </tr>
             <tr>
               <td><a data-open="bagelModal" style={{color: 'black', display: 'block'}}>Everything Bagel with Cream Cheese</a></td>
@@ -59,6 +72,7 @@ var ProductTable = React.createClass({
                   </span>
                 </div>
               </td>
+              <td><button onClick={this.handleClick} type="button" className="primary button" id="Everything Bagel with Cream Cheese">Add</button></td>
             </tr>
             <tr>
               <td><a data-open="bagelModal" style={{color: 'black', display: 'block'}}>Plain Bagel with Cream Cheese</a></td>
@@ -70,6 +84,7 @@ var ProductTable = React.createClass({
                   </span>
                 </div>
               </td>
+              <td><button onClick={this.handleClick} type="button" className="primary button" id="Plain Bagel with Cream Cheese">Add</button></td>
             </tr>
             <tr>
               <td><a data-open="hersheysccModal" style={{color: 'black', display: 'block'}}>Hershey's Cookies & Cream</a></td>
@@ -367,7 +382,9 @@ var ProductTable = React.createClass({
                   </span>
                 </div>
               </td>
+              <td><button onClick={this.handleClick} type="button" className="primary button" id="Emergen-C Packet (Orange)">Add</button></td>
             </tr>
+            */}
             <tr>
               <td></td>
               <td>*Stock levels may not be up to date.</td>
