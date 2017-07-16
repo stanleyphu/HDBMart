@@ -21,9 +21,16 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
+    modulesDirectories: [
+      'node_modules',
+      './app/components',
+      './app/api'
+    ],
     alias: {
       Main: 'app/components/Main.jsx',
       ProductTable: 'app/components/ProductTable.jsx',
+      ShoppingCart: 'app/components/ShoppingCart.jsx',
+      InventoryAPI: 'app/api/InventoryAPI.jsx',
       applicationStyles: 'app/styles/app.css'
     },
     extensions: ['', '.js', '.jsx']

@@ -16,3 +16,32 @@
   margin: 25px auto;
   border: 0;
 }
+
+p {
+  text-align: center;
+}
+
+table {
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.button {
+  width: 100%;
+  margin: 0;
+}
+
+.progress {
+  margin: 0;
+}
+
+#shoppingCart {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#purchaseButton {
+  display: block;
+  margin: 1.5rem auto;
+  width: 50%;
+}
