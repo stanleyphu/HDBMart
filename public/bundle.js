@@ -19856,10 +19856,10 @@
 	    }
 	    note = note.replace(/ /g, '+');
 
-	    console.log(amount);
-	    console.log(note);
+	    //console.log(amount);
+	    //console.log(note);
 	    var link = 'https://venmo.com/?txn=pay&audience=friends&recipients=' + username + '&amount=' + amount + '&note=' + note;
-	    console.log(link);
+	    //console.log(link);
 
 	    var renderShoppingCart = function renderShoppingCart() {
 	      var items = _this.state.items;
