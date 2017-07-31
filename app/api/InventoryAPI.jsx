@@ -10,6 +10,7 @@ module.exports = {
         stock: 8,
         id: uuid()
       },
+      /*
       {
         name: "Everything Bagel with Cream Cheese",
         price: 1.25,
@@ -22,6 +23,7 @@ module.exports = {
         stock: 3,
         id: uuid()
       },
+      */
       {
         name: "Hershey\'s Cookies & Cream",
         price: 0.85,
@@ -85,7 +87,7 @@ module.exports = {
       {
         name: "Cheetos Cheddar Jalapenos (Medium Size)",
         price: 0.35,
-        stock: 4,
+        stock: 2,
         id: uuid()
       },
       {
@@ -109,7 +111,7 @@ module.exports = {
       {
         name: "Fruit Snacks Healthy (2)",
         price: 0.25,
-        stock: 15,
+        stock: 10,
         id: uuid()
       },
       {
@@ -130,12 +132,14 @@ module.exports = {
         stock: 3,
         id: uuid()
       },
+      /*
       {
         name: "Lime Chili Flavor Cup Noodle",
         price: 0.50,
         stock: 2,
         id: uuid()
       },
+      */
       {
         name: "Hot and Spicy Tom Yum Cup Noodles",
         price: 0.75,
@@ -176,6 +180,12 @@ module.exports = {
         name: "Hansen Soda (Orange)",
         price: 0.75,
         stock: 2,
+        id: uuid()
+      },
+      {
+        name: "Sanpelligrino (Orange)",
+        price: 1.00,
+        stock: 3,
         id: uuid()
       },
       {
