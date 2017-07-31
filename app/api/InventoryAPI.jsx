@@ -1,4 +1,5 @@
 var uuid = require('node-uuid');
+var axios = require('axios');
 
 module.exports = {
   getInventory: function () {
@@ -184,7 +185,7 @@ module.exports = {
         id: uuid()
       }
     ];
-
+    
     return inventory;
   },
   findInventoryItem: function (inventory, name) {

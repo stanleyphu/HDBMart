@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var InventoryItem = mongoose.model('InventoryItem', {
+var Item = mongoose.model('Item', {
   name: {
     type: String,
     required: true
@@ -16,5 +16,5 @@ var InventoryItem = mongoose.model('InventoryItem', {
 });
 
 module.exports = {
-  InventoryItem
+  Item
 };

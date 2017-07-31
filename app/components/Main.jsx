@@ -1,5 +1,6 @@
 var React = require('react');
 var uuid = require('node-uuid');
+var axios = require('axios');
 
 var ProductTable = require('ProductTable');
 var ShoppingCart = require('ShoppingCart');
@@ -9,8 +10,22 @@ var Main = React.createClass({
   getInitialState: function () {
     return {
       items: [],
-      inventory: InventoryAPI.getInventory()
+      inventory: []
     };
+  },
+  loadInventoryFromServer: function () {
+    axios.get('/inventory')
+      .then((res) => {
+        this.setState({
+          inventory: res.data.items
+        });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  },
+  componentWillMount: function () {
+    this.loadInventoryFromServer();
   },
   handleAddItem: function (itemName) {
     var item = InventoryAPI.findInventoryItem(this.state.inventory, itemName);
@@ -26,6 +41,16 @@ var Main = React.createClass({
           }
         ]
       });
+
+      // axios.post('/inventory', {
+      //   name: item.name,
+      //   price: item.price.toFixed(2),
+      //   stock: item.stock
+      // }).then((res) => {
+      //   console.log(res);
+      // }).catch((e) => {
+      //   console.log(e);
+      // });
     }
   },
   render: function () {
