@@ -10,7 +10,6 @@ module.exports = {
         stock: 8,
         id: uuid()
       },
-      /*
       {
         name: "Everything Bagel with Cream Cheese",
         price: 1.25,
@@ -23,7 +22,6 @@ module.exports = {
         stock: 3,
         id: uuid()
       },
-      */
       {
         name: "Hershey\'s Cookies & Cream",
         price: 0.85,
@@ -132,14 +130,12 @@ module.exports = {
         stock: 3,
         id: uuid()
       },
-      /*
       {
         name: "Lime Chili Flavor Cup Noodle",
         price: 0.50,
         stock: 2,
         id: uuid()
       },
-      */
       {
         name: "Hot and Spicy Tom Yum Cup Noodles",
         price: 0.75,
@@ -195,7 +191,7 @@ module.exports = {
         id: uuid()
       }
     ];
-    
+
     return inventory;
   },
   findInventoryItem: function (inventory, name) {
