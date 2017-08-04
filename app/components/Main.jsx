@@ -83,7 +83,6 @@ var Main = React.createClass({
 
     return (
       <div>
-        <h1 className="text-center" style={{'color': 'blue'}}>Luu's FuErDai</h1>
         <ProductTable onAddItem={this.handleAddItem} inventory={this.state.inventory}/>
         {renderShoppingCart()}
         <img src="https://preview.ibb.co/k6DWAk/kona_luu.jpg" alt="kona luu" border="0" id="kona-luu" />

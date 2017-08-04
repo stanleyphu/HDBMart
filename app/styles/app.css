@@ -23,7 +23,7 @@ p {
 
 table {
   padding: 0 2rem;
-  margin-bottom: 2rem;
+  margin: 1rem 0 2rem 0;
 }
 
 .button {
@@ -33,6 +33,10 @@ table {
 
 .progress {
   margin: 0;
+}
+
+.top-bar {
+  background-color: white;
 }
 
 #shoppingCart {
