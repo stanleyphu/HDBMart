@@ -14,7 +14,7 @@ var UserSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    require: true,
+    required: true,
     minlength: 6
   },
   tokens: [{
@@ -29,12 +29,12 @@ var UserSchema = new mongoose.Schema({
   }]
 });
 
-UserSchema.methods.toJSON = function () {
-  var user = this;
-  var userObject = user.toObject();
-
-  return _.pick(userObject, ['_id', 'username']);
-};
+// UserSchema.methods.toJSON = function () {
+//   var user = this;
+//   var userObject = user.toObject();
+//
+//   return _.pick(userObject, ['_id', 'username']);
+// };
 
 UserSchema.methods.generateAuthToken = function () {
   var user = this;
@@ -75,7 +75,7 @@ UserSchema.statics.findByToken = function (token) {
   });
 };
 
-UserSchema.statics.findByCredentials = function (email, password) {
+UserSchema.statics.findByCredentials = function (username, password) {
   var User = this;
 
   return User.findOne({username}).then((user) => {

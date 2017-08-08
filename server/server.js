@@ -3,9 +3,12 @@ require('./config/config');
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var _ = require('lodash');
 
 var {mongoose} = require('./db/mongoose');
 var {Item} = require('./models/item');
+var {User} = require('./models/user');
+var {authenticate} = require('./middleware/authenticate');
 
 // Create our app
 var app = express();
@@ -35,6 +38,37 @@ app.get('/inventory', (req, res) => {
   }, (e) => {
     res.status(400).send(e);
   });
+});
+
+// // POST /users
+// app.post('/users', (req, res) => {
+//   var body = _.pick(req.body, ['username', 'password']);
+//   var user = new User(body);
+//
+//   user.save().then((user) => {
+//     res.send(user);
+//   });
+// });
+
+app.get('/users/me', authenticate, (req, res) => {
+  
+  res.send(req.user);
+});
+
+app.post('/users/login', (req, res) => {
+  var body = _.pick(req.body, ['username', 'password']);
+
+  User.findByCredentials(body.username, body.password).then((user) => {
+    return user.generateAuthToken().then((token) => {
+      res.header('x-auth', token).send(user);
+    });
+  }).catch((e) => {
+    res.status(400).send();
+  });
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'));
 });
 
 app.listen(PORT, function () {
