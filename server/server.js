@@ -51,7 +51,6 @@ app.get('/inventory', (req, res) => {
 // });
 
 app.get('/users/me', authenticate, (req, res) => {
-  
   res.send(req.user);
 });
 
@@ -67,7 +66,7 @@ app.post('/users/login', (req, res) => {
   });
 });
 
-app.get('/login', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'));
 });
 

@@ -5,6 +5,7 @@ var {Route, Router, IndexRoute, hashHistory, browserHistory} = require('react-ro
 var App = require('App');
 var Main = require('Main');
 var LoginPage = require('LoginPage');
+var AdminPage = require('AdminPage');
 
 // Load foundation
 require('style!css!foundation-sites/dist/css/foundation.min.css')
@@ -16,6 +17,7 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <Route path="login" component={LoginPage}/>
+      <Route path="admin" component={AdminPage}/>
       <IndexRoute component={Main}/>
     </Route>
   </Router>,

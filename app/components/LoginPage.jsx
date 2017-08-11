@@ -7,14 +7,18 @@ var LoginPage = React.createClass({
 
     var username = this.refs.username.value;
     var password = this.refs.password.value;
-    alert(this.refs.username.value + " : " + this.refs.password.value);
+    // alert(this.refs.username.value + " : " + this.refs.password.value);
 
     axios.post('/users/login', {
       username: username,
       password: password
     }).then((res) => {
       console.log(res);
+      console.log(res.headers["x-auth"]);
+      localStorage.setItem('token', res.headers["x-auth"]);
     }).catch((e) => {
+      alert("Error! Login failed");
+      this.refs.password.focus();
       console.log(e);
     });
 
