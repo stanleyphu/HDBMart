@@ -39,7 +39,16 @@ var AdminPage = React.createClass({
         'x-auth': localStorage.getItem('token')
       }
     }).then((res) => {
-      console.log(res);
+      //console.log(res);
+      axios.get('/inventory')
+        .then((res) => {
+          this.setState({
+            inventory: res.data.items
+          });
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     }).catch((e) => {
       console.log(e);
     });

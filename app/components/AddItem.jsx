@@ -4,7 +4,7 @@ var AddItem = React.createClass({
   onFormSubmit: function(e) {
     e.preventDefault();
 
-    alert(this.refs.item.value + ': ' + this.refs.stock.value + ' ' + this.refs.price.value + '!');
+    //alert(this.refs.item.value + ': ' + this.refs.stock.value + ' ' + this.refs.price.value + '!');
 
     var itemName = this.refs.item.value;
     var itemStock = this.refs.stock.value;
