@@ -30,9 +30,11 @@ var ProductTable = React.createClass({
     var renderInventory = () => {
       return inventory.map((item) => {
         var priceValue = item.price.toFixed(2);
-        return (
-          <InventoryItem key={item.id} name={item.name} price={priceValue} stock={item.stock} onAddItem={this.handleAddItem}/>
-        );
+        if (item.stock) {
+          return (
+            <InventoryItem key={item._id} name={item.name} price={priceValue} stock={item.stock} onAddItem={this.handleAddItem}/>
+          );
+        }
       });
     };
 

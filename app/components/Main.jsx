@@ -1,5 +1,6 @@
 var React = require('react');
 var uuid = require('node-uuid');
+var axios = require('axios');
 
 var ProductTable = require('ProductTable');
 var ShoppingCart = require('ShoppingCart');
@@ -9,8 +10,22 @@ var Main = React.createClass({
   getInitialState: function () {
     return {
       items: [],
-      inventory: InventoryAPI.getInventory()
+      inventory: []
     };
+  },
+  loadInventoryFromServer: function () {
+    axios.get('/inventory')
+      .then((res) => {
+        this.setState({
+          inventory: res.data.items
+        });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  },
+  componentWillMount: function () {
+    this.loadInventoryFromServer();
   },
   handleAddItem: function (itemName) {
     var item = InventoryAPI.findInventoryItem(this.state.inventory, itemName);
@@ -26,6 +41,16 @@ var Main = React.createClass({
           }
         ]
       });
+
+      // axios.post('/inventory', {
+      //   name: item.name,
+      //   price: item.price.toFixed(2),
+      //   stock: item.stock
+      // }).then((res) => {
+      //   console.log(res);
+      // }).catch((e) => {
+      //   console.log(e);
+      // });
     }
   },
   render: function () {
@@ -38,10 +63,10 @@ var Main = React.createClass({
     }
     note = note.replace(/ /g, '+');
 
-    console.log(amount);
-    console.log(note);
+    //console.log(amount);
+    //console.log(note);
     var link = `https://venmo.com/?txn=pay&audience=friends&recipients=${username}&amount=${amount}&note=${note}`;
-    console.log(link);
+    //console.log(link);
 
     var renderShoppingCart = () => {
       var {items} = this.state;
@@ -58,7 +83,6 @@ var Main = React.createClass({
 
     return (
       <div>
-        <h1 className="text-center" style={{'color': 'blue'}}>Luu's FuErDai</h1>
         <ProductTable onAddItem={this.handleAddItem} inventory={this.state.inventory}/>
         {renderShoppingCart()}
         <img src="https://preview.ibb.co/k6DWAk/kona_luu.jpg" alt="kona luu" border="0" id="kona-luu" />
