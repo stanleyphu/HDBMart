@@ -18,7 +18,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 app.post('/inventory', (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   var item = new Item({
     name: req.body.name,
     price: req.body.price,
@@ -38,6 +38,39 @@ app.get('/inventory', (req, res) => {
   }, (e) => {
     res.status(400).send(e);
   });
+});
+
+app.patch('/inventory', authenticate, (req, res) => {
+  var itemName = req.body.name;
+  var increase = req.body.increase;
+
+  if (increase) {
+    Item.findOneAndUpdate({
+      name: itemName
+    }, {$inc: {stock: 1}}).then((item) => {
+      if (!item) {
+        return res.status(404).send();
+      }
+
+      res.send({item});
+    }).catch((e) => {
+      res.status(400).send();
+    });
+  }
+  else {
+    //decrease
+    Item.findOneAndUpdate({
+      name: itemName
+    }, {$inc: {stock: -1}}).then((item) => {
+      if (!item) {
+        return res.status(404).send();
+      }
+
+      res.send({item});
+    }).catch((e) => {
+      res.status(400).send();
+    });
+  }
 });
 
 // // POST /users

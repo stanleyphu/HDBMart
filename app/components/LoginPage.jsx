@@ -13,8 +13,8 @@ var LoginPage = React.createClass({
       username: username,
       password: password
     }).then((res) => {
-      console.log(res);
-      console.log(res.headers["x-auth"]);
+      // console.log(res);
+      // console.log(res.headers["x-auth"]);
       localStorage.setItem('token', res.headers["x-auth"]);
     }).catch((e) => {
       alert("Error! Login failed");

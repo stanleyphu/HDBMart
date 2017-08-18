@@ -107,13 +107,13 @@
 	var App = __webpack_require__(229);
 	var Main = __webpack_require__(230);
 	var LoginPage = __webpack_require__(321);
-	var AdminPage = __webpack_require__(328);
+	var AdminPage = __webpack_require__(322);
 
 	// Load foundation
-	__webpack_require__(322);
+	__webpack_require__(325);
 	$(document).foundation();
 
-	__webpack_require__(326);
+	__webpack_require__(329);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -35589,7 +35589,9 @@
 	    var renderInventory = function renderInventory() {
 	      return inventory.map(function (item) {
 	        var priceValue = item.price.toFixed(2);
-	        return React.createElement(InventoryItem, { key: item._id, name: item.name, price: priceValue, stock: item.stock, onAddItem: _this.handleAddItem });
+	        if (item.stock) {
+	          return React.createElement(InventoryItem, { key: item._id, name: item.name, price: priceValue, stock: item.stock, onAddItem: _this.handleAddItem });
+	        }
 	      });
 	    };
 
@@ -36197,8 +36199,8 @@
 	      username: username,
 	      password: password
 	    }).then(function (res) {
-	      console.log(res);
-	      console.log(res.headers["x-auth"]);
+	      // console.log(res);
+	      // console.log(res.headers["x-auth"]);
 	      localStorage.setItem('token', res.headers["x-auth"]);
 	    }).catch(function (e) {
 	      alert("Error! Login failed");
@@ -36274,13 +36276,317 @@
 /* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var React = __webpack_require__(8);
+	var axios = __webpack_require__(291);
+
+	var AdminProductTable = __webpack_require__(323);
+	var AddItem = __webpack_require__(331);
+
+	var AdminPage = React.createClass({
+	  displayName: 'AdminPage',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      inventory: [],
+	      loggedIn: false
+	    };
+	  },
+	  componentWillMount: function componentWillMount() {
+	    var _this = this;
+
+	    axios.get('/users/me', {
+	      headers: {
+	        'x-auth': localStorage.getItem('token')
+	      }
+	    }).then(function (res) {
+	      console.log(res);
+	      _this.setState({
+	        loggedIn: true
+	      });
+	    }).catch(function (e) {
+	      console.log(e);
+	    });
+
+	    this.loadInventoryFromServer();
+	  },
+	  handleFormSubmit: function handleFormSubmit(item) {
+	    axios.post('/inventory', {
+	      name: item.name,
+	      stock: item.stock,
+	      price: item.price
+	    }, {
+	      headers: {
+	        'x-auth': localStorage.getItem('token')
+	      }
+	    }).then(function (res) {
+	      console.log(res);
+	    }).catch(function (e) {
+	      console.log(e);
+	    });
+	  },
+	  handleIncreaseStock: function handleIncreaseStock(itemName) {
+	    var _this2 = this;
+
+	    axios.patch('/inventory', {
+	      name: itemName,
+	      increase: true
+	    }, {
+	      headers: {
+	        'x-auth': localStorage.getItem('token')
+	      }
+	    }).then(function (res) {
+	      console.log(res);
+	      _this2.loadInventoryFromServer();
+	    }).catch(function (e) {
+	      console.log(e);
+	    });
+	  },
+	  handleDecreaseStock: function handleDecreaseStock(itemName) {
+	    var _this3 = this;
+
+	    axios.patch('/inventory', {
+	      name: itemName,
+	      increase: false
+	    }, {
+	      headers: {
+	        'x-auth': localStorage.getItem('token')
+	      }
+	    }).then(function (res) {
+	      console.log(res);
+	      _this3.loadInventoryFromServer();
+	    }).catch(function (e) {
+	      console.log(e);
+	    });
+	  },
+	  loadInventoryFromServer: function loadInventoryFromServer() {
+	    var _this4 = this;
+
+	    axios.get('/inventory').then(function (res) {
+	      _this4.setState({
+	        inventory: res.data.items
+	      });
+	    }).catch(function (e) {
+	      console.log(e);
+	    });
+	  },
+	  render: function render() {
+	    if (this.state.loggedIn) {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(AddItem, { onFormSubmit: this.handleFormSubmit }),
+	        React.createElement(AdminProductTable, { inventory: this.state.inventory, onIncreaseStock: this.handleIncreaseStock, onDecreaseStock: this.handleDecreaseStock })
+	      );
+	    } else {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'h1',
+	          { className: 'text-center' },
+	          'Not logged in!'
+	        )
+	      );
+	    }
+	  }
+	});
+
+	module.exports = AdminPage;
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(8);
+
+	var AdminInventoryItem = __webpack_require__(324);
+
+	var AdminProductTable = React.createClass({
+	  displayName: 'AdminProductTable',
+
+	  componentDidMount: function componentDidMount() {},
+	  handleIncreaseStock: function handleIncreaseStock(id) {
+	    this.props.onIncreaseStock(id);
+	  },
+	  handleDecreaseStock: function handleDecreaseStock(id) {
+	    this.props.onDecreaseStock(id);
+	  },
+	  render: function render() {
+	    var _this = this;
+
+	    var inventory = this.props.inventory;
+
+
+	    var renderAdminInventory = function renderAdminInventory() {
+	      return inventory.map(function (item) {
+	        var priceValue = item.price.toFixed(2);
+	        return React.createElement(AdminInventoryItem, { key: item._id, name: item.name, price: priceValue, stock: item.stock, onIncreaseStock: _this.handleIncreaseStock, onDecreaseStock: _this.handleDecreaseStock });
+	      });
+	    };
+
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'table',
+	        { className: 'hover stack' },
+	        React.createElement(
+	          'thead',
+	          null,
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'th',
+	              { width: '500' },
+	              'Product'
+	            ),
+	            React.createElement(
+	              'th',
+	              { width: '100' },
+	              'Price'
+	            ),
+	            React.createElement(
+	              'th',
+	              { width: '200' },
+	              'Stock'
+	            ),
+	            React.createElement('th', { width: '200' })
+	          )
+	        ),
+	        React.createElement(
+	          'tbody',
+	          null,
+	          renderAdminInventory(),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement('td', null),
+	            React.createElement(
+	              'td',
+	              null,
+	              '*Stock levels may not be up to date.'
+	            ),
+	            React.createElement('td', null)
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = AdminProductTable;
+
+/***/ }),
+/* 324 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(8);
+
+	var AdminInventoryItem = React.createClass({
+	  displayName: "AdminInventoryItem",
+
+	  handleIncreaseStock: function handleIncreaseStock(e) {
+	    e.preventDefault();
+	    console.log(e.target.id);
+	    this.props.onIncreaseStock(e.target.id);
+	  },
+	  handleDecreaseStock: function handleDecreaseStock(e) {
+	    e.preventDefault();
+	    console.log(e.target.id);
+	    this.props.onDecreaseStock(e.target.id);
+	  },
+	  render: function render() {
+	    var _props = this.props,
+	        name = _props.name,
+	        price = _props.price,
+	        stock = _props.stock;
+
+	    var progressStatus, width;
+
+	    if (stock >= 10) {
+	      progressStatus = "success progress";
+	      width = stock * 10 >= 100 ? 100 : stock * 10;
+	    } else if (stock >= 5) {
+	      progressStatus = "warning progress";
+	      width = stock * 10 >= 100 ? 100 : stock * 10;
+	    } else {
+	      progressStatus = "alert progress";
+	      width = stock * 10 >= 100 ? 100 : stock * 10;
+	    }
+
+	    return React.createElement(
+	      "tr",
+	      null,
+	      React.createElement(
+	        "td",
+	        null,
+	        name
+	      ),
+	      React.createElement(
+	        "td",
+	        null,
+	        "$",
+	        price
+	      ),
+	      React.createElement(
+	        "td",
+	        null,
+	        React.createElement(
+	          "div",
+	          { className: progressStatus },
+	          React.createElement(
+	            "span",
+	            { className: "progress-meter", style: { width: width + "%" } },
+	            React.createElement(
+	              "p",
+	              { className: "progress-meter-text" },
+	              stock
+	            )
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        "td",
+	        null,
+	        React.createElement(
+	          "div",
+	          { className: "expanded button-group" },
+	          React.createElement(
+	            "a",
+	            { className: "button", onClick: this.handleIncreaseStock, id: name },
+	            "Add"
+	          ),
+	          React.createElement(
+	            "a",
+	            { className: "button", onClick: this.handleDecreaseStock, id: name },
+	            "Remove"
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = AdminInventoryItem;
+
+/***/ }),
+/* 325 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(323);
+	var content = __webpack_require__(326);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(325)(content, {});
+	var update = __webpack_require__(328)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -36297,10 +36603,10 @@
 	}
 
 /***/ }),
-/* 323 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(324)();
+	exports = module.exports = __webpack_require__(327)();
 	// imports
 
 
@@ -36311,7 +36617,7 @@
 
 
 /***/ }),
-/* 324 */
+/* 327 */
 /***/ (function(module, exports) {
 
 	/*
@@ -36367,7 +36673,7 @@
 
 
 /***/ }),
-/* 325 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -36619,16 +36925,16 @@
 
 
 /***/ }),
-/* 326 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(327);
+	var content = __webpack_require__(330);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(325)(content, {});
+	var update = __webpack_require__(328)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -36645,10 +36951,10 @@
 	}
 
 /***/ }),
-/* 327 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(324)();
+	exports = module.exports = __webpack_require__(327)();
 	// imports
 
 
@@ -36659,57 +36965,66 @@
 
 
 /***/ }),
-/* 328 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(8);
-	var axios = __webpack_require__(291);
 
-	var AdminPage = React.createClass({
-	  displayName: 'AdminPage',
+	var AddItem = React.createClass({
+	  displayName: 'AddItem',
 
-	  componentWillMount: function componentWillMount() {
-	    // e.preventDefault();
-	    //
-	    // var username = this.refs.username.value;
-	    // var password = this.refs.password.value;
-	    // // alert(this.refs.username.value + " : " + this.refs.password.value);
-	    //
-	    axios.get('/users/me', {
-	      headers: {
-	        'x-auth': localStorage.getItem('token')
-	      }
-	    }).then(function (res) {
-	      console.log(res);
-	    }).catch(function (e) {
-	      console.log(e);
+	  onFormSubmit: function onFormSubmit(e) {
+	    e.preventDefault();
+
+	    alert(this.refs.item.value + ': ' + this.refs.stock.value + ' ' + this.refs.price.value + '!');
+
+	    var itemName = this.refs.item.value;
+	    var itemStock = this.refs.stock.value;
+	    var itemPrice = this.refs.price.value;
+
+	    // Check for valid inputs
+	    if (itemName.length <= 0) {
+	      this.refs.item.focus();
+	    } else if (!itemStock || itemStock < 0) {
+	      this.refs.stock.focus();
+	    } else if (!itemPrice || itemPrice < 0) {
+	      this.refs.price.focus();
+	    }
+
+	    // Pass up to app - call props handler
+	    this.props.onFormSubmit({
+	      name: itemName,
+	      stock: itemStock,
+	      price: itemPrice
 	    });
-	    //
-	    // // axios.post('/users', {
-	    // //   username: username,
-	    // //   password: password
-	    // // }).then((res) => {
-	    // //   console.log(res);
-	    // // });
-	    //
-	    // //this.props.onFormSubmit(user);
 	  },
 	  render: function render() {
 	    return React.createElement(
 	      'div',
 	      null,
 	      React.createElement(
-	        'p',
-	        null,
-	        'Hello'
+	        'div',
+	        { style: { 'textAlign': 'center' } },
+	        React.createElement(
+	          'form',
+	          { onSubmit: this.onFormSubmit, style: { display: 'inline-block' } },
+	          React.createElement('input', { type: 'text', ref: 'item', placeholder: 'Enter item', style: { display: 'inline-block', width: '400px', 'margin-right': '10px' } }),
+	          React.createElement('input', { type: 'number', ref: 'stock', placeholder: 'Stock', style: { display: 'inline-block', width: '100px', 'margin-right': '10px' } }),
+	          React.createElement('input', { type: 'number', ref: 'price', placeholder: 'Price', step: '0.05', style: { display: 'inline-block', width: '100px', 'margin-right': '10px' } }),
+	          React.createElement(
+	            'button',
+	            { className: 'button primary', style: { display: 'inline-block', width: '100px', margin: 'auto' } },
+	            'Submit'
+	          )
+	        )
 	      )
 	    );
 	  }
 	});
 
-	module.exports = AdminPage;
+	module.exports = AddItem;
 
 /***/ })
 /******/ ]);
