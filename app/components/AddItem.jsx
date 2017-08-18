@@ -20,13 +20,20 @@ var AddItem = React.createClass({
     else if (!itemPrice || itemPrice < 0) {
       this.refs.price.focus();
     }
+    else {
+      this.refs.item.value = "";
+      this.refs.stock.value = "";
+      this.refs.price.value = "";
+      this.refs.item.focus();
 
-    // Pass up to app - call props handler
-    this.props.onFormSubmit({
-      name: itemName,
-      stock: itemStock,
-      price: itemPrice
-    });
+      // Pass up to app - call props handler
+      this.props.onFormSubmit({
+        name: itemName,
+        stock: itemStock,
+        price: itemPrice
+      });
+    }
+
   },
   render: function() {
     return (

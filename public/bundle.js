@@ -36597,12 +36597,12 @@
 /* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(8);
 
 	var AddItem = React.createClass({
-	  displayName: 'AddItem',
+	  displayName: "AddItem",
 
 	  onFormSubmit: function onFormSubmit(e) {
 	    e.preventDefault();
@@ -36620,32 +36620,37 @@
 	      this.refs.stock.focus();
 	    } else if (!itemPrice || itemPrice < 0) {
 	      this.refs.price.focus();
-	    }
+	    } else {
+	      this.refs.item.value = "";
+	      this.refs.stock.value = "";
+	      this.refs.price.value = "";
+	      this.refs.item.focus();
 
-	    // Pass up to app - call props handler
-	    this.props.onFormSubmit({
-	      name: itemName,
-	      stock: itemStock,
-	      price: itemPrice
-	    });
+	      // Pass up to app - call props handler
+	      this.props.onFormSubmit({
+	        name: itemName,
+	        stock: itemStock,
+	        price: itemPrice
+	      });
+	    }
 	  },
 	  render: function render() {
 	    return React.createElement(
-	      'div',
+	      "div",
 	      null,
 	      React.createElement(
-	        'div',
+	        "div",
 	        { style: { 'textAlign': 'center' } },
 	        React.createElement(
-	          'form',
+	          "form",
 	          { onSubmit: this.onFormSubmit, style: { display: 'inline-block' } },
-	          React.createElement('input', { type: 'text', ref: 'item', placeholder: 'Enter item', style: { display: 'inline-block', width: '400px', 'margin-right': '10px' } }),
-	          React.createElement('input', { type: 'number', ref: 'stock', placeholder: 'Stock', style: { display: 'inline-block', width: '100px', 'margin-right': '10px' } }),
-	          React.createElement('input', { type: 'number', ref: 'price', placeholder: 'Price', step: '0.05', style: { display: 'inline-block', width: '100px', 'margin-right': '10px' } }),
+	          React.createElement("input", { type: "text", ref: "item", placeholder: "Enter item", style: { display: 'inline-block', width: '400px', 'margin-right': '10px' } }),
+	          React.createElement("input", { type: "number", ref: "stock", placeholder: "Stock", style: { display: 'inline-block', width: '100px', 'margin-right': '10px' } }),
+	          React.createElement("input", { type: "number", ref: "price", placeholder: "Price", step: "0.05", style: { display: 'inline-block', width: '100px', 'margin-right': '10px' } }),
 	          React.createElement(
-	            'button',
-	            { className: 'button primary', style: { display: 'inline-block', width: '100px', margin: 'auto' } },
-	            'Submit'
+	            "button",
+	            { className: "button primary", style: { display: 'inline-block', width: '100px', margin: 'auto' } },
+	            "Submit"
 	          )
 	        )
 	      )
