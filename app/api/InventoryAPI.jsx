@@ -16,7 +16,6 @@ module.exports = {
         stock: 4,
         id: uuid()
       },
-      */
       {
         name: "Plain Bagel with Cream Cheese",
         price: 1.25,

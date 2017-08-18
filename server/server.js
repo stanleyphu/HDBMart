@@ -73,15 +73,15 @@ app.patch('/inventory', authenticate, (req, res) => {
   }
 });
 
-// // POST /users
-// app.post('/users', (req, res) => {
-//   var body = _.pick(req.body, ['username', 'password']);
-//   var user = new User(body);
-//
-//   user.save().then((user) => {
-//     res.send(user);
-//   });
-// });
+// POST /users
+app.post('/users', (req, res) => {
+  var body = _.pick(req.body, ['username', 'password']);
+  var user = new User(body);
+
+  user.save().then((user) => {
+    res.send(user);
+  });
+});
 
 app.get('/users/me', authenticate, (req, res) => {
   res.send(req.user);

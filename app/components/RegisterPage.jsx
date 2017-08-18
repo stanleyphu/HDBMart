@@ -1,7 +1,7 @@
 var React = require('react');
 var axios = require('axios');
 
-var LoginPage = React.createClass({
+var RegisterPage = React.createClass({
   handleFormSubmit: function(e) {
     e.preventDefault();
 
@@ -9,33 +9,20 @@ var LoginPage = React.createClass({
     var password = this.refs.password.value;
     // alert(this.refs.username.value + " : " + this.refs.password.value);
 
-    axios.post('/users/login', {
+    axios.post('/users', {
       username: username,
       password: password
     }).then((res) => {
-      // console.log(res);
-      // console.log(res.headers["x-auth"]);
-      localStorage.setItem('token', res.headers["x-auth"]);
+      //console.log(res);
       alert("Success!");
-    }).catch((e) => {
-      alert("Error! Login failed");
-      this.refs.password.focus();
-      console.log(e);
     });
-
-    // axios.post('/users', {
-    //   username: username,
-    //   password: password
-    // }).then((res) => {
-    //   console.log(res);
-    // });
 
     //this.props.onFormSubmit(user);
   },
   render: function () {
     return (
       <div>
-        <h2 className="text-center">Admin Login</h2>
+        <h2 className="text-center">Register for an Account</h2>
         <form onSubmit={this.handleFormSubmit}>
           <div className="row">
             <div className="medium-6 medium-centered columns">
@@ -53,7 +40,7 @@ var LoginPage = React.createClass({
           </div>
           <div className="row">
             <div className="medium-6 medium-centered columns">
-              <button className="button primary">Login</button>
+              <button className="button primary">Register</button>
             </div>
           </div>
         </form>
@@ -62,4 +49,4 @@ var LoginPage = React.createClass({
   }
 });
 
-module.exports = LoginPage;
+module.exports = RegisterPage;

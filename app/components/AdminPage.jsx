@@ -18,7 +18,7 @@ var AdminPage = React.createClass({
         }
       })
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         this.setState({
           loggedIn: true
         });
