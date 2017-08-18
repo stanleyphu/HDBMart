@@ -36320,6 +36320,8 @@
 	    this.loadInventoryFromServer();
 	  },
 	  handleFormSubmit: function handleFormSubmit(item) {
+	    var _this2 = this;
+
 	    axios.post('/inventory', {
 	      name: item.name,
 	      stock: item.stock,
@@ -36329,34 +36331,24 @@
 	        'x-auth': localStorage.getItem('token')
 	      }
 	    }).then(function (res) {
-	      console.log(res);
+	      //console.log(res);
+	      axios.get('/inventory').then(function (res) {
+	        _this2.setState({
+	          inventory: res.data.items
+	        });
+	      }).catch(function (e) {
+	        console.log(e);
+	      });
 	    }).catch(function (e) {
 	      console.log(e);
 	    });
 	  },
 	  handleIncreaseStock: function handleIncreaseStock(itemName) {
-	    var _this2 = this;
-
-	    axios.patch('/inventory', {
-	      name: itemName,
-	      increase: true
-	    }, {
-	      headers: {
-	        'x-auth': localStorage.getItem('token')
-	      }
-	    }).then(function (res) {
-	      console.log(res);
-	      _this2.loadInventoryFromServer();
-	    }).catch(function (e) {
-	      console.log(e);
-	    });
-	  },
-	  handleDecreaseStock: function handleDecreaseStock(itemName) {
 	    var _this3 = this;
 
 	    axios.patch('/inventory', {
 	      name: itemName,
-	      increase: false
+	      increase: true
 	    }, {
 	      headers: {
 	        'x-auth': localStorage.getItem('token')
@@ -36368,11 +36360,28 @@
 	      console.log(e);
 	    });
 	  },
-	  loadInventoryFromServer: function loadInventoryFromServer() {
+	  handleDecreaseStock: function handleDecreaseStock(itemName) {
 	    var _this4 = this;
 
+	    axios.patch('/inventory', {
+	      name: itemName,
+	      increase: false
+	    }, {
+	      headers: {
+	        'x-auth': localStorage.getItem('token')
+	      }
+	    }).then(function (res) {
+	      console.log(res);
+	      _this4.loadInventoryFromServer();
+	    }).catch(function (e) {
+	      console.log(e);
+	    });
+	  },
+	  loadInventoryFromServer: function loadInventoryFromServer() {
+	    var _this5 = this;
+
 	    axios.get('/inventory').then(function (res) {
-	      _this4.setState({
+	      _this5.setState({
 	        inventory: res.data.items
 	      });
 	    }).catch(function (e) {
@@ -36598,7 +36607,7 @@
 	  onFormSubmit: function onFormSubmit(e) {
 	    e.preventDefault();
 
-	    alert(this.refs.item.value + ': ' + this.refs.stock.value + ' ' + this.refs.price.value + '!');
+	    //alert(this.refs.item.value + ': ' + this.refs.stock.value + ' ' + this.refs.price.value + '!');
 
 	    var itemName = this.refs.item.value;
 	    var itemStock = this.refs.stock.value;
