@@ -15,9 +15,9 @@ var RegisterPage = React.createClass({
     }).then((res) => {
       //console.log(res);
       alert("Success!");
+    }).catch((e) => {
+      alert("Error! Try again.");
     });
-
-    //this.props.onFormSubmit(user);
   },
   render: function () {
     return (

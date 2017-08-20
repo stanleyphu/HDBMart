@@ -1,4 +1,4 @@
-#kona-luu,
+#konaluu,
 #apple,
 #bagel,
 #cheetos,
@@ -31,12 +31,33 @@ table {
   margin: 0;
 }
 
+.callout {
+  margin: 2rem 1rem;
+}
+
 .progress {
   margin: 0;
 }
 
 .top-bar {
-  background-color: white;
+  /*background-color: white;*/
+  text-align: center;
+}
+
+.active-link {
+  /*color: black;*/
+  font-weight: bold;
+}
+
+#topBarTitle {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#martName {
+  margin: .5rem auto;
+  color: blue;
 }
 
 #shoppingCart {
@@ -48,4 +69,12 @@ table {
   display: block;
   margin: 1.5rem auto;
   width: 50%;
+}
+
+#kona-luu, #chris-kim, #stanley-phu {
+  width: 200px;
+}
+
+#aboutUs, #contactUs {
+  margin: 1rem auto;
 }

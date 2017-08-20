@@ -7,6 +7,8 @@ var Main = require('Main');
 var LoginPage = require('LoginPage');
 var AdminPage = require('AdminPage');
 var RegisterPage = require('RegisterPage');
+var AboutUsPage = require('AboutUsPage');
+var ContactUsPage = require('ContactUsPage');
 
 // Load foundation
 require('style!css!foundation-sites/dist/css/foundation.min.css')
@@ -20,6 +22,8 @@ ReactDOM.render(
       <Route path="login" component={LoginPage}/>
       <Route path="admin" component={AdminPage}/>
       <Route path="register" component={RegisterPage}/>
+      <Route path="aboutus" component={AboutUsPage}/>
+      <Route path="contactus" component={ContactUsPage}/>
       <IndexRoute component={Main}/>
     </Route>
   </Router>,

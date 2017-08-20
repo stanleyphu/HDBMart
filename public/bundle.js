@@ -109,6 +109,8 @@
 	var LoginPage = __webpack_require__(321);
 	var AdminPage = __webpack_require__(322);
 	var RegisterPage = __webpack_require__(326);
+	var AboutUsPage = __webpack_require__(333);
+	var ContactUsPage = __webpack_require__(334);
 
 	// Load foundation
 	__webpack_require__(327);
@@ -125,6 +127,8 @@
 	    React.createElement(Route, { path: 'login', component: LoginPage }),
 	    React.createElement(Route, { path: 'admin', component: AdminPage }),
 	    React.createElement(Route, { path: 'register', component: RegisterPage }),
+	    React.createElement(Route, { path: 'aboutus', component: AboutUsPage }),
+	    React.createElement(Route, { path: 'contactus', component: ContactUsPage }),
 	    React.createElement(IndexRoute, { component: Main })
 	  )
 	), document.getElementById('app'));
@@ -25486,28 +25490,79 @@
 /* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(8);
 
+	var _require = __webpack_require__(166),
+	    Link = _require.Link,
+	    IndexLink = _require.IndexLink;
+
 	var App = React.createClass({
-	  displayName: "App",
+	  displayName: 'App',
 
 	  render: function render() {
 	    return React.createElement(
-	      "div",
+	      'div',
 	      null,
 	      React.createElement(
-	        "div",
-	        { className: "top-bar" },
+	        'div',
+	        { className: 'top-bar' },
 	        React.createElement(
-	          "h1",
-	          { className: "text-center", style: { 'color': 'blue' } },
-	          "Luu's FuErDai"
+	          'div',
+	          { className: 'top-bar-left' },
+	          React.createElement(
+	            'ul',
+	            { className: 'menu' },
+	            React.createElement(
+	              'li',
+	              null,
+	              React.createElement(
+	                IndexLink,
+	                { to: '/', activeClassName: 'active-link' },
+	                'Mart Home'
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'top-bar-right' },
+	          React.createElement(
+	            'ul',
+	            { className: 'menu' },
+	            React.createElement(
+	              'li',
+	              null,
+	              React.createElement(
+	                Link,
+	                { to: '/aboutus', activeClassName: 'active-link' },
+	                'About Us'
+	              )
+	            ),
+	            React.createElement(
+	              'li',
+	              null,
+	              React.createElement(
+	                Link,
+	                { to: '/contactus', activeClassName: 'active-link' },
+	                'Contact Us'
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'topBarTitle' },
+	          React.createElement(
+	            'h2',
+	            { className: 'text-center', id: 'martName' },
+	            'Luu\'s FuErDai'
+	          )
 	        )
 	      ),
 	      React.createElement(
-	        "div",
+	        'div',
 	        null,
 	        this.props.children
 	      )
@@ -25621,13 +25676,7 @@
 	      'div',
 	      null,
 	      React.createElement(ProductTable, { onAddItem: this.handleAddItem, inventory: this.state.inventory }),
-	      renderShoppingCart(),
-	      React.createElement('img', { src: 'https://preview.ibb.co/k6DWAk/kona_luu.jpg', alt: 'kona luu', border: '0', id: 'kona-luu' }),
-	      React.createElement(
-	        'h4',
-	        { className: 'text-center' },
-	        'For any questions, please contact Kona Luu, CEO, by e-mail or Lync at kluu@greenlee.textron.com.'
-	      )
+	      renderShoppingCart()
 	    );
 	  }
 	});
@@ -36685,9 +36734,9 @@
 	    }).then(function (res) {
 	      //console.log(res);
 	      alert("Success!");
+	    }).catch(function (e) {
+	      alert("Error! Try again.");
 	    });
-
-	    //this.props.onFormSubmit(user);
 	  },
 	  render: function render() {
 	    return React.createElement(
@@ -37132,10 +37181,136 @@
 
 
 	// module
-	exports.push([module.id, "#kona-luu,\r\n#apple,\r\n#bagel,\r\n#cheetos,\r\n#doritos,\r\n#emergenc,\r\n#fritos,\r\n#gatorade,\r\n#dietHansen,\r\n#hersheyscc,\r\n#layssc,\r\n#laysClassic,\r\n#starbucksMochaFrap,\r\n#nutellaBread {\r\n  display: block;\r\n  margin: 25px auto;\r\n  border: 0;\r\n}\r\n\r\np {\r\n  text-align: center;\r\n}\r\n\r\ntable {\r\n  padding: 0 2rem;\r\n  margin: 1rem 0 2rem 0;\r\n}\r\n\r\n.button {\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\n.progress {\r\n  margin: 0;\r\n}\r\n\r\n.top-bar {\r\n  background-color: white;\r\n}\r\n\r\n#shoppingCart {\r\n  width: 50%;\r\n  margin: 0 auto;\r\n}\r\n\r\n#purchaseButton {\r\n  display: block;\r\n  margin: 1.5rem auto;\r\n  width: 50%;\r\n}\r\n", ""]);
+	exports.push([module.id, "#konaluu,\r\n#apple,\r\n#bagel,\r\n#cheetos,\r\n#doritos,\r\n#emergenc,\r\n#fritos,\r\n#gatorade,\r\n#dietHansen,\r\n#hersheyscc,\r\n#layssc,\r\n#laysClassic,\r\n#starbucksMochaFrap,\r\n#nutellaBread {\r\n  display: block;\r\n  margin: 25px auto;\r\n  border: 0;\r\n}\r\n\r\np {\r\n  text-align: center;\r\n}\r\n\r\ntable {\r\n  padding: 0 2rem;\r\n  margin: 1rem 0 2rem 0;\r\n}\r\n\r\n.button {\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\n.callout {\r\n  margin: 2rem 1rem;\r\n}\r\n\r\n.progress {\r\n  margin: 0;\r\n}\r\n\r\n.top-bar {\r\n  /*background-color: white;*/\r\n  text-align: center;\r\n}\r\n\r\n.active-link {\r\n  /*color: black;*/\r\n  font-weight: bold;\r\n}\r\n\r\n#topBarTitle {\r\n  display: block;\r\n  width: 50%;\r\n  margin: 0 auto;\r\n}\r\n\r\n#martName {\r\n  margin: .5rem auto;\r\n  color: blue;\r\n}\r\n\r\n#shoppingCart {\r\n  width: 50%;\r\n  margin: 0 auto;\r\n}\r\n\r\n#purchaseButton {\r\n  display: block;\r\n  margin: 1.5rem auto;\r\n  width: 50%;\r\n}\r\n\r\n#kona-luu, #chris-kim, #stanley-phu {\r\n  width: 200px;\r\n}\r\n\r\n#aboutUs, #contactUs {\r\n  margin: 1rem auto;\r\n}\r\n", ""]);
 
 	// exports
 
+
+/***/ }),
+/* 333 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(8);
+
+	var AboutUsPage = React.createClass({
+	  displayName: "AboutUsPage",
+
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(
+	        "div",
+	        { className: "callout secondary" },
+	        React.createElement(
+	          "div",
+	          { className: "media-object" },
+	          React.createElement(
+	            "div",
+	            { className: "media-object-section" },
+	            React.createElement(
+	              "div",
+	              { className: "thumbnail" },
+	              React.createElement("img", { src: "http://preview.ibb.co/mm9WHQ/20993388_10209923956154875_1026688284_o.jpg", alt: "kona luu", border: "0", id: "kona-luu" })
+	            )
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "media-object-section" },
+	            React.createElement(
+	              "h4",
+	              null,
+	              "Kona Luu, CEO"
+	            )
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "callout secondary" },
+	        React.createElement(
+	          "div",
+	          { className: "media-object" },
+	          React.createElement(
+	            "div",
+	            { className: "media-object-section" },
+	            React.createElement(
+	              "div",
+	              { className: "thumbnail" },
+	              React.createElement("img", { src: "http://preview.ibb.co/hpGYWk/20993326_10209923960114974_1742713695_o.jpg", alt: "chris kim", border: "0", id: "chris-kim" })
+	            )
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "media-object-section" },
+	            React.createElement(
+	              "h4",
+	              null,
+	              "Chris Kim, CMO"
+	            )
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "callout secondary" },
+	        React.createElement(
+	          "div",
+	          { className: "media-object" },
+	          React.createElement(
+	            "div",
+	            { className: "media-object-section" },
+	            React.createElement(
+	              "div",
+	              { className: "thumbnail" },
+	              React.createElement("img", { src: "http://preview.ibb.co/cEfSrk/Singles6_3.jpg", alt: "stanley phu", border: "0", id: "stanley-phu" })
+	            )
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "media-object-section" },
+	            React.createElement(
+	              "h4",
+	              null,
+	              "Stanley Phu"
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = AboutUsPage;
+
+/***/ }),
+/* 334 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(8);
+
+	var ContactUsPage = React.createClass({
+	  displayName: "ContactUsPage",
+
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(
+	        "h3",
+	        { className: "text-center", id: "contactUs" },
+	        "For any questions, please contact Kona Luu, CEO, by e-mail or Lync at kluu@greenlee.textron.com."
+	      ),
+	      React.createElement("img", { src: "https://preview.ibb.co/k6DWAk/kona_luu.jpg", alt: "kona luu", border: "0", id: "konaluu" })
+	    );
+	  }
+	});
+
+	module.exports = ContactUsPage;
 
 /***/ })
 /******/ ]);
