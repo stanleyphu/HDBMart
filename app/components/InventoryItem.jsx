@@ -35,7 +35,7 @@ var InventoryItem = React.createClass({
             </span>
           </div>
         </td>
-        <td><button onClick={this.handleAddItem} type="button" className="primary button" id={name}>Add</button></td>
+        <td><button data-open="shoppingCartModal" onClick={this.handleAddItem} type="button" className="primary button" id={name}>Add</button></td>
       </tr>
     )
   }

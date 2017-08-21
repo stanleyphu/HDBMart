@@ -49,6 +49,10 @@ table {
   font-weight: bold;
 }
 
+.about-text {
+  text-align: left;
+}
+
 #topBarTitle {
   display: block;
   width: 50%;

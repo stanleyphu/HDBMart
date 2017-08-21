@@ -59,7 +59,11 @@ var Main = React.createClass({
     var note = '';
     for (var i = 0; i < this.state.items.length; i++) {
       amount += parseFloat(this.state.items[i].price);
-      note += (this.state.items[i].name + ', ');
+
+      if (i == this.state.items.length - 1)
+        note += this.state.items[i].name;
+      else
+        note += (this.state.items[i].name + ', ');
     }
     note = note.replace(/ /g, '+');
 
