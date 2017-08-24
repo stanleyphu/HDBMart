@@ -1,6 +1,7 @@
 var React = require('react');
 var uuid = require('node-uuid');
 var axios = require('axios');
+var _ = require('lodash');
 
 var ProductTable = require('ProductTable');
 var ShoppingCart = require('ShoppingCart');
@@ -53,6 +54,15 @@ var Main = React.createClass({
       // });
     }
   },
+  handleRemoveCartItem: function(id) {
+    var newItems = _.filter(this.state.items, function(item) {
+        return item.name !== id;
+    });
+
+    this.setState({
+      items: newItems
+    });
+  },
   render: function () {
     var username = 'kona-luu';
     var amount = 0.00;
@@ -79,7 +89,7 @@ var Main = React.createClass({
         return (
           <div>
             <h3 className="text-center">Shopping Cart</h3>
-            <ShoppingCart id="shoppingCart" items={items}/>
+            <ShoppingCart id="shoppingCart" items={items} onRemoveCartItem={this.handleRemoveCartItem}/>
             <a href={link} className="button" id="purchaseButton">Purchase Items</a>
           </div>
         );

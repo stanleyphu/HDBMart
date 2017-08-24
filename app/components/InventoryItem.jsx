@@ -4,7 +4,7 @@ var InventoryItem = React.createClass({
   handleAddItem: function (e) {
     e.preventDefault();
     //console.log(e);
-    console.log(e.target.id);
+    //console.log(e.target.id);
     this.props.onAddItem(e.target.id);
   },
   render: function () {
