@@ -36472,7 +36472,7 @@
 	      return React.createElement(
 	        'div',
 	        null,
-	        React.createElement(AddItem, { onFormSubmit: this.handleFormSubmit }),
+	        React.createElement(AddItem, { id: 'addItem', onFormSubmit: this.handleFormSubmit }),
 	        React.createElement(AdminProductTable, { inventory: this.state.inventory, onIncreaseStock: this.handleIncreaseStock, onDecreaseStock: this.handleDecreaseStock })
 	      );
 	    } else {
@@ -36834,12 +36834,16 @@
 
 	"use strict";
 
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 	var React = __webpack_require__(8);
 
 	var AboutUsPage = React.createClass({
 	  displayName: "AboutUsPage",
 
 	  render: function render() {
+	    var _React$createElement;
+
 	    return React.createElement(
 	      "div",
 	      null,
@@ -36864,7 +36868,7 @@
 	            React.createElement(
 	              "div",
 	              { className: "thumbnail" },
-	              React.createElement("img", { src: "http://preview.ibb.co/mm9WHQ/20993388_10209923956154875_1026688284_o.jpg", alt: "kona luu", border: "0", id: "kona-luu" })
+	              React.createElement("img", (_React$createElement = { src: "http://image.ibb.co/dPBzsQ/kona_luu_profile.jpg", alt: "kona_luu_profile" }, _defineProperty(_React$createElement, "alt", "kona luu"), _defineProperty(_React$createElement, "border", "0"), _defineProperty(_React$createElement, "id", "kona-luu"), _React$createElement))
 	            )
 	          ),
 	          React.createElement(
@@ -36961,6 +36965,11 @@
 	              "p",
 	              { className: "about-text" },
 	              "Stanley graduated from the University of California, San Diego in 2016 with a Bachelor of Science in Electrical Engineering and a depth in Software Systems. Stanley joined the franchise as he had a vision of applying his software knowledge to help further his experience."
+	            ),
+	            React.createElement(
+	              "p",
+	              { className: "about-text" },
+	              "His interests include basketball, tennis, and working out but he enjoys playing all types of sports. His favorite sports teams are the Lakers, Dodgers, and Raiders. He also likes learning about new technology and working on software projects in his spare time."
 	            ),
 	            React.createElement(
 	              "p",
@@ -37386,7 +37395,7 @@
 
 
 	// module
-	exports.push([module.id, "#konaluu,\r\n#apple,\r\n#bagel,\r\n#cheetos,\r\n#doritos,\r\n#emergenc,\r\n#fritos,\r\n#gatorade,\r\n#dietHansen,\r\n#hersheyscc,\r\n#layssc,\r\n#laysClassic,\r\n#starbucksMochaFrap,\r\n#nutellaBread {\r\n  display: block;\r\n  margin: 25px auto;\r\n  border: 0;\r\n}\r\n\r\np {\r\n  text-align: center;\r\n}\r\n\r\ntable {\r\n  padding: 0 2rem;\r\n  margin: 1rem 0 2rem 0;\r\n}\r\n\r\n.button {\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\n.callout {\r\n  margin: 2rem 1rem;\r\n}\r\n\r\n.progress {\r\n  margin: 0;\r\n}\r\n\r\n.top-bar {\r\n  /*background-color: white;*/\r\n  text-align: center;\r\n}\r\n\r\n.active-link {\r\n  /*color: black;*/\r\n  font-weight: bold;\r\n}\r\n\r\n.about-text {\r\n  text-align: left;\r\n}\r\n\r\n#topBarTitle {\r\n  display: block;\r\n  width: 50%;\r\n  margin: 0 auto;\r\n}\r\n\r\n#martName {\r\n  margin: .5rem auto;\r\n  color: blue;\r\n}\r\n\r\n#shoppingCart {\r\n  width: 50%;\r\n  margin: 0 auto;\r\n}\r\n\r\n#purchaseButton {\r\n  display: block;\r\n  margin: 1.5rem auto;\r\n  width: 50%;\r\n}\r\n\r\n#kona-luu, #chris-kim, #stanley-phu {\r\n  width: 200px;\r\n}\r\n\r\n#aboutUs, #contactUs {\r\n  margin: 1rem auto;\r\n}\r\n", ""]);
+	exports.push([module.id, "#konaluu,\r\n#apple,\r\n#bagel,\r\n#cheetos,\r\n#doritos,\r\n#emergenc,\r\n#fritos,\r\n#gatorade,\r\n#dietHansen,\r\n#hersheyscc,\r\n#layssc,\r\n#laysClassic,\r\n#starbucksMochaFrap,\r\n#nutellaBread {\r\n  display: block;\r\n  margin: 25px auto;\r\n  border: 0;\r\n}\r\n\r\np {\r\n  text-align: center;\r\n}\r\n\r\ntable {\r\n  padding: 0 2rem;\r\n  margin: 1rem 0 2rem 0;\r\n}\r\n\r\n.button {\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\n.callout {\r\n  margin: 2rem 1rem;\r\n}\r\n\r\n.progress {\r\n  margin: 0;\r\n}\r\n\r\n.top-bar {\r\n  /*background-color: white;*/\r\n  text-align: center;\r\n}\r\n\r\n.active-link {\r\n  /*color: black;*/\r\n  font-weight: bold;\r\n}\r\n\r\n.about-text {\r\n  text-align: left;\r\n}\r\n\r\n#topBarTitle {\r\n  display: block;\r\n  width: 50%;\r\n  margin: 0 auto;\r\n}\r\n\r\n#martName {\r\n  margin: .5rem auto;\r\n  color: blue;\r\n}\r\n\r\n#shoppingCart {\r\n  width: 50%;\r\n  margin: 0 auto;\r\n}\r\n\r\n#purchaseButton {\r\n  display: block;\r\n  margin: 1.5rem auto;\r\n  width: 50%;\r\n}\r\n\r\n#kona-luu, #chris-kim, #stanley-phu {\r\n  width: 200px;\r\n}\r\n\r\n#aboutUs, #contactUs, #addItem {\r\n  margin: 1rem auto;\r\n}\r\n", ""]);
 
 	// exports
 

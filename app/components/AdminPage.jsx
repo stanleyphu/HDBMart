@@ -98,7 +98,7 @@ var AdminPage = React.createClass({
     if (this.state.loggedIn) {
       return (
         <div>
-          <AddItem onFormSubmit={this.handleFormSubmit}/>
+          <AddItem id="addItem" onFormSubmit={this.handleFormSubmit}/>
           <AdminProductTable inventory={this.state.inventory} onIncreaseStock={this.handleIncreaseStock} onDecreaseStock={this.handleDecreaseStock}/>
         </div>
       );

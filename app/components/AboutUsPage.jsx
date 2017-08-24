@@ -17,7 +17,7 @@ var AboutUsPage = React.createClass({
           <div className="media-object">
             <div className="media-object-section">
               <div className="thumbnail">
-                <img src="http://preview.ibb.co/mm9WHQ/20993388_10209923956154875_1026688284_o.jpg" alt="kona luu" border="0" id="kona-luu" />
+                <img src="http://image.ibb.co/dPBzsQ/kona_luu_profile.jpg" alt="kona_luu_profile" alt="kona luu" border="0" id="kona-luu" />
               </div>
             </div>
             <div className="media-object-section">
@@ -79,6 +79,10 @@ var AboutUsPage = React.createClass({
               <p className="about-text">
                 Stanley graduated from the University of California, San Diego in 2016 with a Bachelor of Science in Electrical Engineering and a depth in
                 Software Systems. Stanley joined the franchise as he had a vision of applying his software knowledge to help further his experience.
+              </p>
+              <p className="about-text">
+                His interests include basketball, tennis, and working out but he enjoys playing all types of sports. His favorite sports teams are the Lakers,
+                Dodgers, and Raiders. He also likes learning about new technology and working on software projects in his spare time.
               </p>
               <p className="about-text">
                 Stanley’s responsibilities will be to manage and update the online website as well as find ways moving forward to enhance the customer
