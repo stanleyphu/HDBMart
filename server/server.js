@@ -107,21 +107,4 @@ app.get('*', (req, res) => {
 
 app.listen(PORT, function () {
   console.log('Express server is up on port ' + PORT);
-
-  // var item = new Item({
-  //   name: 'Boba',
-  //   price: '4.00',
-  //   stock: 1
-  // });
-  // item.save().then((doc) => {
-  //   console.log(doc);
-  // }, (e) => {
-  //   console.log('error');
-  // });
-
-  // Item.find({}).then((items) => {
-  //   console.log({items});
-  // }, (err) => {
-  //   console.log('Unable to fetch items', err);
-  // });
 });
