@@ -1,39 +1,39 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   entry: [
-    'script!jquery/dist/jquery.min.js',
-    'script!foundation-sites/dist/js/foundation.min.js',
+    // 'script-loader!jquery/dist/jquery.min.js',
+    // 'script-loader!foundation-sites/dist/js/foundation.min.js',
     './app/app.jsx'
   ],
-  externals: {
-    jquery: 'jQuery'
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      '$': 'jquery',
-      'jQuery': 'jquery'
-    })
-  ],
+  // externals: {
+  //   jquery: 'jQuery'
+  // },
+  // plugins: [
+  //   new webpack.ProvidePlugin({
+  //     '$': 'jquery',
+  //     'jQuery': 'jquery'
+  //   })
+  // ],
   output: {
     path: __dirname,
     filename: './public/bundle.js'
   },
   resolve: {
-    root: __dirname,
-    modulesDirectories: [
+    modules: [
       'node_modules',
-      './app/components',
-      './app/api'
+      path.resolve(__dirname, 'app/components'),
+      path.resolve(__dirname, 'app/api')
     ],
     alias: {
-      Main: 'app/components/Main.jsx',
-      ProductTable: 'app/components/ProductTable.jsx',
-      ShoppingCart: 'app/components/ShoppingCart.jsx',
-      InventoryAPI: 'app/api/InventoryAPI.jsx',
-      applicationStyles: 'app/styles/app.css'
+      // Main: 'app/components/Main.jsx',
+      // ProductTable: 'app/components/ProductTable.jsx',
+      // ShoppingCart: 'app/components/ShoppingCart.jsx',
+      // InventoryAPI: 'app/api/InventoryAPI.jsx',
+      applicationStyles: path.resolve(__dirname, 'app/styles/app.css')
     },
-    extensions: ['', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx']
   },
   module: {
     loaders: [

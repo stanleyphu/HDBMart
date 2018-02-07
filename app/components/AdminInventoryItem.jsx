@@ -1,53 +1,56 @@
 var React = require('react');
 
-var AdminInventoryItem = React.createClass({
-  handleIncreaseStock: function (e) {
+import { Table, Progress, Button, Segment } from 'semantic-ui-react'
+
+class AdminInventoryItem extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleIncreaseStock = this.handleIncreaseStock.bind(this);
+    this.handleDecreaseStock = this.handleDecreaseStock.bind(this);
+  }
+
+  handleIncreaseStock(e) {
     e.preventDefault();
-    console.log(e.target.id);
+    console.log(this.ref);
     this.props.onIncreaseStock(e.target.id);
-  },
-  handleDecreaseStock: function (e) {
+  }
+
+  handleDecreaseStock(e) {
     e.preventDefault();
     console.log(e.target.id);
     this.props.onDecreaseStock(e.target.id);
-  },
-  render: function () {
+  }
+
+  render() {
     var {name, price, stock} = this.props;
     var progressStatus, width;
 
     if (stock >= 10) {
-      progressStatus = "success progress";
+      progressStatus = "green";
       width = (stock * 10) >= 100 ? 100 : (stock * 10);
     }
     else if (stock >= 5) {
-      progressStatus = "warning progress";
+      progressStatus = "yellow";
       width = (stock * 10) >= 100 ? 100 : (stock * 10);
     }
     else {
-      progressStatus = "alert progress";
+      progressStatus = "red";
       width = (stock * 10) >= 100 ? 100 : (stock * 10);
     }
 
     return (
-      <tr>
-        <td>{name}</td>
-        <td>${price}</td>
-        <td>
-          <div className={progressStatus}>
-            <span className="progress-meter" style={{width: `${width}%`}}>
-              <p className="progress-meter-text">{stock}</p>
-            </span>
-          </div>
-        </td>
-        <td>
-          <div className="expanded button-group">
-            <a className="button" onClick={this.handleIncreaseStock} id={name}>Add</a>
-            <a className="button" onClick={this.handleDecreaseStock} id={name}>Remove</a>
-          </div>
-        </td>
-      </tr>
+      <Table.Row>
+        <Table.Cell>{name}</Table.Cell>
+        <Table.Cell>${price}</Table.Cell>
+        <Table.Cell>
+            <Progress percent={width} style={{'marginBottom': '0px'}} color={progressStatus}/>
+        </Table.Cell>
+        <Table.Cell><Button primary onClick={this.handleIncreaseStock} id={name} >Add</Button></Table.Cell>
+        <Table.Cell><Button primary onClick={this.handleDecreaseStock} id={name}>Remove</Button></Table.Cell>
+      </Table.Row>
     )
   }
-});
+}
 
 module.exports = AdminInventoryItem;

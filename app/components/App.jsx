@@ -1,36 +1,57 @@
 var React = require('react');
-var {Link, IndexLink} = require('react-router');
+import { Link, IndexLink } from 'react-router'
 
-var App = React.createClass({
-  render: function () {
+import { Menu, Segment } from 'semantic-ui-react'
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+    this.handleItemClick = this.handleItemClick.bind(this);
+  }
+
+  handleItemClick(e, {name}) {
+      this.setState({
+          activeItem: name
+      });
+  }
+
+  render() {
+    const { activeItem } = this.state;
+
     return (
       <div>
-        <div className="top-bar">
-          <div className="top-bar-left">
-            <ul className="menu">
-              <li>
-                <IndexLink to="/" activeClassName="active-link">Mart Home</IndexLink>
-              </li>
-            </ul>
-          </div>
+        <Segment basic>
+        <Menu pointing secondary size="large" color="blue">
+          <Menu.Item 
+            as={IndexLink} to='/'
+            name='home'
+            active={activeItem === 'home'}
+            onClick={this.handleItemClick}
+          >
+            Luu Mart
+          </Menu.Item>
 
-          <div className="top-bar-right">
-            <ul className="menu">
-              <li>
-                <Link to="/aboutus" activeClassName="active-link">About Us</Link>
-              </li>
-              <li>
-                <Link to="/contactus" activeClassName="active-link">Contact Us</Link>
-              </li>
-            </ul>
-          </div>
+          <Menu.Item
+            as={Link} to='/aboutus'
+            name='aboutUs'
+            active={activeItem === 'aboutUs'}
+            onClick={this.handleItemClick}
+          >
+            About Us
+          </Menu.Item>
 
-          <div id="topBarTitle">
-              <h2 className="text-center" id="martName">Luu's FuErDai</h2>
-          </div>
-
-
-        </div>
+          <Menu.Item
+            as={Link} to='/contactus'
+            name='contactUs'
+            active={activeItem === 'contactUs'}
+            onClick={this.handleItemClick}
+          >
+            Contact Us
+          </Menu.Item>
+        </Menu>
+        </Segment>
 
         {/* <h1 className="text-center" id="martName" style={{'color': 'blue'}}>Luu's FuErDai</h1> */}
 
@@ -40,6 +61,6 @@ var App = React.createClass({
       </div>
     );
   }
-});
+}
 
 module.exports = App;

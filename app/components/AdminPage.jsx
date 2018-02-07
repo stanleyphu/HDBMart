@@ -4,6 +4,8 @@ var axios = require('axios');
 var AdminProductTable = require('AdminProductTable');
 var AddItem = require('AddItem');
 
+import { Segment } from 'semantic-ui-react'
+
 var AdminPage = React.createClass({
   getInitialState: function () {
     return {

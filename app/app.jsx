@@ -11,10 +11,10 @@ var AboutUsPage = require('AboutUsPage');
 var ContactUsPage = require('ContactUsPage');
 
 // Load foundation
-require('style!css!foundation-sites/dist/css/foundation.min.css')
-$(document).foundation();
+// require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css')
+// $(document).foundation();
 
-require('style!css!applicationStyles');
+// require('style-loader!css-loader!applicationStyles');
 
 ReactDOM.render(
   <Router history={browserHistory}>

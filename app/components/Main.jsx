@@ -25,7 +25,7 @@ var Main = React.createClass({
         console.log(e);
       });
   },
-  componentWillMount: function () {
+  componentDidMount: function () {
     this.loadInventoryFromServer();
   },
   handleAddItem: function (itemName) {
