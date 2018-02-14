@@ -58,7 +58,8 @@ var AdminPage = React.createClass({
   handleIncreaseStock: function (itemName) {
     axios.patch('/inventory', {
         name: itemName,
-        increase: true
+        increase: true,
+        remove: false
       }, {
         headers: {
           'x-auth': localStorage.getItem('token')
@@ -73,7 +74,23 @@ var AdminPage = React.createClass({
   handleDecreaseStock: function (itemName) {
     axios.patch('/inventory', {
         name: itemName,
-        increase: false
+        increase: false,
+        remove: false
+      }, {
+        headers: {
+          'x-auth': localStorage.getItem('token')
+        }
+    }).then((res) => {
+      console.log(res);
+      this.loadInventoryFromServer();
+    }).catch((e) => {
+      console.log(e);
+    });
+  },
+  handleDeleteItem: function (itemName) {
+    axios.patch('/inventory', {
+        name: itemName,
+        remove: true
       }, {
         headers: {
           'x-auth': localStorage.getItem('token')
@@ -101,7 +118,7 @@ var AdminPage = React.createClass({
       return (
         <div>
           <AddItem id="addItem" onFormSubmit={this.handleFormSubmit}/>
-          <AdminProductTable inventory={this.state.inventory} onIncreaseStock={this.handleIncreaseStock} onDecreaseStock={this.handleDecreaseStock}/>
+          <AdminProductTable inventory={this.state.inventory} onIncreaseStock={this.handleIncreaseStock} onDecreaseStock={this.handleDecreaseStock} onDeleteItem={this.handleDeleteItem}/>
         </div>
       );
     }

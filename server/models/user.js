@@ -45,6 +45,8 @@ UserSchema.methods.generateAuthToken = function () {
 
   return user.save().then(() => {
     return token;
+  }, (e) => {
+    console.log(e);
   });
 };
 

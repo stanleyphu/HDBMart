@@ -1,6 +1,6 @@
 var React = require('react');
 
-import { Form, Button, Message } from 'semantic-ui-react'
+import { Container, Form, Button, Message } from 'semantic-ui-react'
 
 class AddItem extends React.Component {
   constructor(props) {
@@ -10,7 +10,10 @@ class AddItem extends React.Component {
       item: '',
       stock: '',
       price: '',
-      error: false
+      error: false,
+      itemError: false,
+      stockError: false,
+      priceError: false
     };
 
     this.handleFormChange = this.handleFormChange.bind(this);
@@ -18,8 +21,6 @@ class AddItem extends React.Component {
   }
 
   handleFormChange(e, { name, value } ) {
-    console.log(name);
-    console.log(value);
     this.setState({
       [name]: value
     });
@@ -32,8 +33,6 @@ class AddItem extends React.Component {
     console.log(stock);
     console.log(price);
 
-    //alert(this.refs.item.value + ': ' + this.refs.stock.value + ' ' + this.refs.price.value + '!');
-
     var itemName = item;
     var itemStock = stock;
     var itemPrice = price;
@@ -41,19 +40,22 @@ class AddItem extends React.Component {
     // Check for valid inputs
     if (itemName.length <= 0) {
       this.setState({
-        error: true
+        error: true,
+        itemError: true
       });
       // this.refs.item.focus();
     }
     else if (!itemStock || itemStock < 0) {
       this.setState({
-        error: true
+        error: true,
+        stockError: true
       });
       // this.refs.stock.focus();
     }
     else if (!itemPrice || itemPrice < 0) {
       this.setState({
-        error: true
+        error: true,
+        priceError: true
       });
       // this.refs.price.focus();
     }
@@ -62,7 +64,10 @@ class AddItem extends React.Component {
         item: '',
         stock: '',
         price: '',
-        error: false 
+        error: false,
+        itemError: false,
+        stockError: false,
+        priceError: false
       });
       // this.refs.item.focus();
 
@@ -77,33 +82,24 @@ class AddItem extends React.Component {
   }
 
   render () {
-    const { item, stock, price, error } = this.state;
+    const { item, stock, price, error, itemError, stockError, priceError } = this.state;
 
     return (
-      // <div>
-      //   <div style={{'textAlign': 'center'}}>
-      //     <form onSubmit={this.onFormSubmit} style={{display: 'inline-block'}}>
-      //       <input type="text" ref="item" placeholder="Enter item" style={{display: 'inline-block', width: '400px', 'margin-right': '10px'}}/>
-      //       <input type="number" ref="stock" placeholder="Stock" style={{display: 'inline-block', width: '100px', 'margin-right': '10px'}}/>
-      //       <input type="number" ref="price" placeholder="Price" step="0.05" style={{display: 'inline-block', width: '100px', 'margin-right': '10px'}}/>
-      //       <button className="button primary" style={{display: 'inline-block', width: '100px', margin: 'auto'}}>Submit</button>
-      //     </form>
-      //   </div>
-      // </div>
-
-      <Form onSubmit={this.onFormSubmit} error={error} >
-        <Form.Group>
-          <Form.Input placeholder='Enter item' name='item' value={item} onChange={this.handleFormChange} />
-          <Form.Input placeholder='Stock' name='stock' value={stock} onChange={this.handleFormChange} />
-          <Form.Input placeholder='Price' name='price' value={price} onChange={this.handleFormChange} />
-          <Form.Button content='Submit' />
-        </Form.Group>
-        <Message 
-          error
-          header="Error"
-          content="Invalid value"
-        />
-      </Form>
+      <Container>
+        <Form onSubmit={this.onFormSubmit} error={error}>
+          <Form.Group>
+            <Form.Input placeholder='Enter item' name='item' value={item} onChange={this.handleFormChange} width={10} error={itemError}/>
+            <Form.Input placeholder='Stock' name='stock' value={stock} onChange={this.handleFormChange} width={3} error={stockError}/>
+            <Form.Input placeholder='Price' name='price' value={price} onChange={this.handleFormChange} width={3} icon="usd" iconPosition="left" error={priceError}/>
+            <Form.Button content='Submit' />
+          </Form.Group>
+          <Message 
+            error
+            header="Error"
+            content="Invalid value"
+          />
+        </Form>
+      </Container>
     );
   }
 }

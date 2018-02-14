@@ -43,8 +43,20 @@ app.get('/inventory', (req, res) => {
 app.patch('/inventory', authenticate, (req, res) => {
   var itemName = req.body.name;
   var increase = req.body.increase;
+  var remove = req.body.remove;
 
-  if (increase) {
+  // console.log(itemName + ' ' + increase);
+
+  if (remove) {
+    Item.remove({
+      name: itemName
+    }).then((item) => {
+      res.send({item});
+    }).catch((e) => {
+      res.status(400).send();
+    });
+  }
+  else if (increase) {
     Item.findOneAndUpdate({
       name: itemName
     }, {$inc: {stock: 1}}).then((item) => {
@@ -62,6 +74,7 @@ app.patch('/inventory', authenticate, (req, res) => {
     Item.findOneAndUpdate({
       name: itemName
     }, {$inc: {stock: -1}}).then((item) => {
+      // console.log(item);
       if (!item) {
         return res.status(404).send();
       }

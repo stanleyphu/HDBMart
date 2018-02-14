@@ -3,11 +3,11 @@ var React = require('react');
 import { Table, Progress, Button, Segment } from 'semantic-ui-react'
 
 var InventoryItem = React.createClass({
-  handleAddItem: function (e) {
+  handleAddItem: function (e, data) {
     e.preventDefault();
     //console.log(e);
-    //console.log(e.target.id);
-    this.props.onAddItem(e.target.id);
+    // console.log(e.target.id);
+    this.props.onAddItem(data.id);
   },
   render: function () {
     var {name, price, stock} = this.props;
@@ -45,7 +45,7 @@ var InventoryItem = React.createClass({
         <Table.Cell>
             <Progress percent={width} style={{'marginBottom': '0px'}} color={progressStatus}/>
         </Table.Cell>
-        <Table.Cell><Button primary onClick={this.handleAddItem}>Add</Button></Table.Cell>
+        <Table.Cell><Button primary onClick={this.handleAddItem} id={name}>Add</Button></Table.Cell>
       </Table.Row>
     )
   }

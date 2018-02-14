@@ -7,6 +7,9 @@ var ProductTable = require('ProductTable');
 var ShoppingCart = require('ShoppingCart');
 var InventoryAPI = require('InventoryAPI');
 
+import { Header, Container, Divider, Button } from 'semantic-ui-react'
+import { Link } from 'react-router'
+
 var Main = React.createClass({
   getInitialState: function () {
     return {
@@ -30,7 +33,6 @@ var Main = React.createClass({
   },
   handleAddItem: function (itemName) {
     var item = InventoryAPI.findInventoryItem(this.state.inventory, itemName);
-
     if (item) {
       this.setState({
         items: [
@@ -87,11 +89,12 @@ var Main = React.createClass({
 
       if (items.length > 0)
         return (
-          <div>
-            <h3 className="text-center">Shopping Cart</h3>
+          <Container>
+            <Header as="h2" textAlign="center">Shopping Cart</Header>
             <ShoppingCart id="shoppingCart" items={items} onRemoveCartItem={this.handleRemoveCartItem}/>
-            <a href={link} className="button" id="purchaseButton">Purchase Items</a>
-          </div>
+            <Divider/>
+            <Button as="a" href={link} primary fluid>Purchase Items</Button>
+          </Container>
         );
     };
 
@@ -99,8 +102,6 @@ var Main = React.createClass({
       <div>
         <ProductTable onAddItem={this.handleAddItem} inventory={this.state.inventory}/>
         {renderShoppingCart()}
-        {/* <img src="https://preview.ibb.co/k6DWAk/kona_luu.jpg" alt="kona luu" border="0" id="kona-luu" /> */}
-        {/* <h4 className="text-center">For any questions, please contact Kona Luu, CEO, by e-mail or Lync at kluu@greenlee.textron.com.</h4> */}
       </div>
     );
   }

@@ -15,6 +15,7 @@ class ProductTable extends React.Component {
     };
 
     this.handleSort = this.handleSort.bind(this);
+    this.handleAddItem = this.handleAddItem.bind(this);
   }
 
   componentDidMount() {
@@ -42,7 +43,7 @@ class ProductTable extends React.Component {
 
   handleAddItem(id) {
       //e.preventDefault();
-      //console.log(e.target.id);
+      // console.log(id + " " + this.props);
       //this.props.onAddItem(e.target.id);
     this.props.onAddItem(id);
   }
@@ -89,7 +90,7 @@ class ProductTable extends React.Component {
     return (
       <Segment basic>
 
-        <Table sortable celled striped color="blue">
+        <Table sortable celled striped color="blue" size="large">
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell width={8} sorted={column === 'product' ? direction : null} onClick={this.handleSort.bind(this, 'name')}>Product</Table.HeaderCell>

@@ -8,18 +8,25 @@ class AdminInventoryItem extends React.Component {
 
     this.handleIncreaseStock = this.handleIncreaseStock.bind(this);
     this.handleDecreaseStock = this.handleDecreaseStock.bind(this);
+    this.handleDeleteItem = this.handleDeleteItem.bind(this);
   }
 
-  handleIncreaseStock(e) {
+  handleIncreaseStock(e, data) {
     e.preventDefault();
-    console.log(this.ref);
-    this.props.onIncreaseStock(e.target.id);
+    console.log("data: " + data.id);
+    this.props.onIncreaseStock(data.id);
   }
 
-  handleDecreaseStock(e) {
+  handleDecreaseStock(e, data) {
     e.preventDefault();
-    console.log(e.target.id);
-    this.props.onDecreaseStock(e.target.id);
+    console.log("data: " + data.id);
+    this.props.onDecreaseStock(data.id);
+  }
+
+  handleDeleteItem(e, data) {
+    e.preventDefault();
+    console.log("data: " + data.id);
+    this.props.onDeleteItem(data.id);
   }
 
   render() {
@@ -44,10 +51,11 @@ class AdminInventoryItem extends React.Component {
         <Table.Cell>{name}</Table.Cell>
         <Table.Cell>${price}</Table.Cell>
         <Table.Cell>
-            <Progress percent={width} style={{'marginBottom': '0px'}} color={progressStatus}/>
+            <Progress percent={width} style={{'marginBottom': '0px'}} color={progressStatus}>{stock}</Progress>
         </Table.Cell>
-        <Table.Cell><Button primary onClick={this.handleIncreaseStock} id={name} >Add</Button></Table.Cell>
-        <Table.Cell><Button primary onClick={this.handleDecreaseStock} id={name}>Remove</Button></Table.Cell>
+        <Table.Cell><Button primary onClick={this.handleIncreaseStock} id={name}>Add</Button></Table.Cell>
+        <Table.Cell><Button primary onClick={this.handleDecreaseStock} id={name}>Decrease</Button></Table.Cell>
+        <Table.Cell><Button color="red" onClick={this.handleDeleteItem} id={name}>Delete</Button></Table.Cell>
       </Table.Row>
     )
   }
