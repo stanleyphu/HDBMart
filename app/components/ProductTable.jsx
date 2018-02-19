@@ -71,9 +71,9 @@ class ProductTable extends React.Component {
     const { column, data, direction } = this.state;
     var {inventory} = this.props;
 
-    if (data !== null) {
-      console.log(data);
-    }
+    // if (data !== null) {
+    //   console.log(data);
+    // }
     
 
     var renderInventory = () => {

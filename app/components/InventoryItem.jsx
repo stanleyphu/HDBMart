@@ -1,15 +1,37 @@
 var React = require('react');
 
-import { Table, Progress, Button, Segment } from 'semantic-ui-react'
+import { Table, Progress, Button, Segment, Modal } from 'semantic-ui-react'
 
-var InventoryItem = React.createClass({
-  handleAddItem: function (e, data) {
+class InventoryItem extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      modalOpen: false
+    }
+
+    this.handleAddItem = this.handleAddItem.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
+  
+  handleAddItem(e, data) {
     e.preventDefault();
     //console.log(e);
     // console.log(e.target.id);
+    this.setState({
+      modalOpen: true
+    })
+
     this.props.onAddItem(data.id);
-  },
-  render: function () {
+  }
+
+  handleClose() {
+    this.setState({
+      modalOpen: false
+    })
+  }
+
+  render() {
     var {name, price, stock} = this.props;
     var progressStatus, width;
 
@@ -45,10 +67,17 @@ var InventoryItem = React.createClass({
         <Table.Cell>
             <Progress percent={width} style={{'marginBottom': '0px'}} color={progressStatus}/>
         </Table.Cell>
-        <Table.Cell><Button primary onClick={this.handleAddItem} id={name}>Add</Button></Table.Cell>
+        <Table.Cell>
+          <Modal size="tiny" open={this.state.modalOpen} onClose={this.handleClose} trigger={<Button primary onClick={this.handleAddItem} id={name}>Add</Button>} >
+            <Modal.Header>Added to Cart</Modal.Header>
+            <Modal.Content>
+              <p><a href="#shoppingCart" onClick={this.handleClose}>Go to Shopping Cart</a></p>
+            </Modal.Content>
+          </Modal>
+        </Table.Cell>
       </Table.Row>
     )
   }
-});
+}
 
 module.exports = InventoryItem;

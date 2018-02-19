@@ -30,7 +30,7 @@ class ShoppingCart extends React.Component {
           //   <td>{item.name}</td>
           //   <td>{item.price}</td>
           // </tr>
-          <Table.Row>
+          <Table.Row key={item.id}>
             <Table.Cell>
               <Button negative onClick={this.handleRemoveCartItem} id={item.name}>
                 Remove
@@ -44,22 +44,7 @@ class ShoppingCart extends React.Component {
     };
 
     return (
-      // <div id="shoppingCart">
-      //   <table className="hover stack">
-      //     <thead>
-      //       <tr>
-      //         <th></th>
-      //         <th>Product</th>
-      //         <th>Price</th>
-      //       </tr>
-      //     </thead>
-      //     <tbody>
-      //       {renderItems()}
-      //     </tbody>
-      //   </table>
-      // </div>
-
-      <Container>
+      <Container id="shoppingCart">
         <Table>
           <Table.Header>
             <Table.Row>
