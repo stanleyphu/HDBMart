@@ -22,7 +22,8 @@ app.post('/inventory', (req, res) => {
   var item = new Item({
     name: req.body.name,
     price: req.body.price,
-    stock: req.body.stock
+    stock: req.body.stock,
+    category: req.body.category
   });
 
   item.save().then((doc) => {

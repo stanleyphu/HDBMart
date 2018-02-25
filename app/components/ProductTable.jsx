@@ -69,7 +69,7 @@ class ProductTable extends React.Component {
 
   render() {
     const { column, data, direction } = this.state;
-    var {inventory} = this.props;
+    var { inventory } = this.props;
 
     // if (data !== null) {
     //   console.log(data);
@@ -101,12 +101,12 @@ class ProductTable extends React.Component {
           </Table.Header>
           <Table.Body>
             {renderInventory()}
-            <Table.Row>
+            {/* <Table.Row>
               <Table.Cell></Table.Cell>
               <Table.Cell>*Stock levels may not be up to date.</Table.Cell>
               <Table.Cell></Table.Cell>
               <Table.Cell></Table.Cell>
-            </Table.Row>
+            </Table.Row> */}
           </Table.Body>
         </Table>
 

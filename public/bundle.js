@@ -77148,7 +77148,9 @@ var App = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-    _this.state = {};
+    _this.state = {
+      activeItem: 'home'
+    };
     _this.handleItemClick = _this.handleItemClick.bind(_this);
     return _this;
   }
@@ -97663,10 +97665,49 @@ var Main = React.createClass({
       );
     };
 
+    var breakfastInventory = this.state.inventory.filter(function (item) {
+      return item.category == 'Breakfast';
+    });
+
+    var chipsInventory = this.state.inventory.filter(function (item) {
+      return item.category == 'Chips';
+    });
+
+    var snacksInventory = this.state.inventory.filter(function (item) {
+      return item.category == 'Snacks';
+    });
+
+    var drinksInventory = this.state.inventory.filter(function (item) {
+      return item.category == 'Drinks';
+    });
+
     return React.createElement(
       'div',
       null,
-      React.createElement(ProductTable, { onAddItem: this.handleAddItem, inventory: this.state.inventory }),
+      React.createElement(
+        _semanticUiReact.Header,
+        { as: 'h2', textAlign: 'center' },
+        'Breakfast'
+      ),
+      React.createElement(ProductTable, { onAddItem: this.handleAddItem, inventory: breakfastInventory }),
+      React.createElement(
+        _semanticUiReact.Header,
+        { as: 'h2', textAlign: 'center' },
+        'Chips'
+      ),
+      React.createElement(ProductTable, { onAddItem: this.handleAddItem, inventory: chipsInventory }),
+      React.createElement(
+        _semanticUiReact.Header,
+        { as: 'h2', textAlign: 'center' },
+        'Snacks'
+      ),
+      React.createElement(ProductTable, { onAddItem: this.handleAddItem, inventory: snacksInventory }),
+      React.createElement(
+        _semanticUiReact.Header,
+        { as: 'h2', textAlign: 'center' },
+        'Drinks'
+      ),
+      React.createElement(ProductTable, { onAddItem: this.handleAddItem, inventory: drinksInventory }),
       renderShoppingCart()
     );
   }
@@ -108603,19 +108644,7 @@ var ProductTable = function (_React$Component) {
           React.createElement(
             _semanticUiReact.Table.Body,
             null,
-            renderInventory(),
-            React.createElement(
-              _semanticUiReact.Table.Row,
-              null,
-              React.createElement(_semanticUiReact.Table.Cell, null),
-              React.createElement(
-                _semanticUiReact.Table.Cell,
-                null,
-                '*Stock levels may not be up to date.'
-              ),
-              React.createElement(_semanticUiReact.Table.Cell, null),
-              React.createElement(_semanticUiReact.Table.Cell, null)
-            )
+            renderInventory()
           )
         )
       );
@@ -109250,7 +109279,8 @@ var AdminPage = React.createClass({
     axios.post('/inventory', {
       name: item.name,
       stock: item.stock,
-      price: item.price
+      price: item.price,
+      category: item.category
     }, {
       headers: {
         'x-auth': localStorage.getItem('token')
@@ -109401,9 +109431,15 @@ var AdminProductTable = function (_React$Component) {
   _createClass(AdminProductTable, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      this.setState({
-        data: nextProps.inventory
-      });
+      if (this.state.column != null) {
+        this.setState({
+          data: _.sortBy(nextProps.inventory, [this.state.column])
+        });
+      } else {
+        this.setState({
+          data: nextProps.inventory
+        });
+      }
     }
   }, {
     key: 'handleIncreaseStock',
@@ -109456,10 +109492,12 @@ var AdminProductTable = function (_React$Component) {
       var inventory = this.props.inventory;
 
 
+      console.log(data);
+
       var renderAdminInventory = function renderAdminInventory() {
         return data.map(function (item) {
           var priceValue = item.price.toFixed(2);
-          return React.createElement(AdminInventoryItem, { key: item._id, name: item.name, price: priceValue, stock: item.stock, onIncreaseStock: _this2.handleIncreaseStock, onDecreaseStock: _this2.handleDecreaseStock, onDeleteItem: _this2.handleDeleteItem });
+          return React.createElement(AdminInventoryItem, { key: item._id, category: item.category, name: item.name, price: priceValue, stock: item.stock, onIncreaseStock: _this2.handleIncreaseStock, onDecreaseStock: _this2.handleDecreaseStock, onDeleteItem: _this2.handleDeleteItem });
         });
       };
 
@@ -109475,6 +109513,11 @@ var AdminProductTable = function (_React$Component) {
             React.createElement(
               _semanticUiReact.Table.Row,
               null,
+              React.createElement(
+                _semanticUiReact.Table.HeaderCell,
+                { sorted: column === 'category' ? direction : null, onClick: this.handleSort.bind(this, 'category') },
+                'Category'
+              ),
               React.createElement(
                 _semanticUiReact.Table.HeaderCell,
                 { width: 6, sorted: column === 'product' ? direction : null, onClick: this.handleSort.bind(this, 'name') },
@@ -109498,21 +109541,7 @@ var AdminProductTable = function (_React$Component) {
           React.createElement(
             _semanticUiReact.Table.Body,
             null,
-            renderAdminInventory(),
-            React.createElement(
-              _semanticUiReact.Table.Row,
-              null,
-              React.createElement(_semanticUiReact.Table.Cell, null),
-              React.createElement(
-                _semanticUiReact.Table.Cell,
-                null,
-                '*Stock levels may not be up to date.'
-              ),
-              React.createElement(_semanticUiReact.Table.Cell, null),
-              React.createElement(_semanticUiReact.Table.Cell, null),
-              React.createElement(_semanticUiReact.Table.Cell, null),
-              React.createElement(_semanticUiReact.Table.Cell, null)
-            )
+            renderAdminInventory()
           )
         )
       );
@@ -109582,6 +109611,7 @@ var AdminInventoryItem = function (_React$Component) {
     key: 'render',
     value: function render() {
       var _props = this.props,
+          category = _props.category,
           name = _props.name,
           price = _props.price,
           stock = _props.stock;
@@ -109602,6 +109632,11 @@ var AdminInventoryItem = function (_React$Component) {
       return React.createElement(
         _semanticUiReact.Table.Row,
         null,
+        React.createElement(
+          _semanticUiReact.Table.Cell,
+          null,
+          category
+        ),
         React.createElement(
           _semanticUiReact.Table.Cell,
           null,
@@ -109628,7 +109663,7 @@ var AdminInventoryItem = function (_React$Component) {
           React.createElement(
             _semanticUiReact.Button,
             { primary: true, onClick: this.handleIncreaseStock, id: name },
-            'Add'
+            '+'
           )
         ),
         React.createElement(
@@ -109637,7 +109672,7 @@ var AdminInventoryItem = function (_React$Component) {
           React.createElement(
             _semanticUiReact.Button,
             { primary: true, onClick: this.handleDecreaseStock, id: name },
-            'Decrease'
+            '-'
           )
         ),
         React.createElement(
@@ -109646,7 +109681,7 @@ var AdminInventoryItem = function (_React$Component) {
           React.createElement(
             _semanticUiReact.Button,
             { color: 'red', onClick: this.handleDeleteItem, id: name },
-            'Delete'
+            'X'
           )
         )
       );
@@ -109679,6 +109714,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var React = __webpack_require__(1);
 
+var options = [{ text: 'Breakfast', value: 'Breakfast' }, { text: 'Chips', value: 'Chips' }, { text: 'Snacks', value: 'Snacks' }, { text: 'Drinks', value: 'Drinks' }];
+
 var AddItem = function (_React$Component) {
   _inherits(AddItem, _React$Component);
 
@@ -109688,13 +109725,15 @@ var AddItem = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (AddItem.__proto__ || Object.getPrototypeOf(AddItem)).call(this, props));
 
     _this.state = {
+      category: '',
       item: '',
       stock: '',
       price: '',
       error: false,
       itemError: false,
       stockError: false,
-      priceError: false
+      priceError: false,
+      categoryError: false
     };
 
     _this.handleFormChange = _this.handleFormChange.bind(_this);
@@ -109716,19 +109755,27 @@ var AddItem = function (_React$Component) {
       var _state = this.state,
           item = _state.item,
           stock = _state.stock,
-          price = _state.price;
+          price = _state.price,
+          category = _state.category;
 
 
       console.log(item);
       console.log(stock);
       console.log(price);
+      console.log(category);
 
       var itemName = item;
       var itemStock = stock;
       var itemPrice = price;
+      var itemCategory = category;
 
       // Check for valid inputs
-      if (itemName.length <= 0) {
+      if (!itemCategory) {
+        this.setState({
+          error: true,
+          categoryError: true
+        });
+      } else if (itemName.length <= 0) {
         this.setState({
           error: true,
           itemError: true
@@ -109751,10 +109798,12 @@ var AddItem = function (_React$Component) {
           item: '',
           stock: '',
           price: '',
+          category: '',
           error: false,
           itemError: false,
           stockError: false,
-          priceError: false
+          priceError: false,
+          categoryError: false
         });
         // this.refs.item.focus();
 
@@ -109762,7 +109811,8 @@ var AddItem = function (_React$Component) {
         this.props.onFormSubmit({
           name: itemName,
           stock: itemStock,
-          price: itemPrice
+          price: itemPrice,
+          category: itemCategory
         });
       }
     }
@@ -109770,13 +109820,15 @@ var AddItem = function (_React$Component) {
     key: 'render',
     value: function render() {
       var _state2 = this.state,
+          category = _state2.category,
           item = _state2.item,
           stock = _state2.stock,
           price = _state2.price,
           error = _state2.error,
           itemError = _state2.itemError,
           stockError = _state2.stockError,
-          priceError = _state2.priceError;
+          priceError = _state2.priceError,
+          categoryError = _state2.categoryError;
 
 
       return React.createElement(
@@ -109788,7 +109840,8 @@ var AddItem = function (_React$Component) {
           React.createElement(
             _semanticUiReact.Form.Group,
             null,
-            React.createElement(_semanticUiReact.Form.Input, { placeholder: 'Enter item', name: 'item', value: item, onChange: this.handleFormChange, width: 10, error: itemError }),
+            React.createElement(_semanticUiReact.Form.Select, { placeholder: 'Category', name: 'category', value: category, onChange: this.handleFormChange, options: options, error: categoryError }),
+            React.createElement(_semanticUiReact.Form.Input, { placeholder: 'Enter item', name: 'item', value: item, onChange: this.handleFormChange, width: 7, error: itemError }),
             React.createElement(_semanticUiReact.Form.Input, { placeholder: 'Stock', name: 'stock', value: stock, onChange: this.handleFormChange, width: 3, error: stockError }),
             React.createElement(_semanticUiReact.Form.Input, { placeholder: 'Price', name: 'price', value: price, onChange: this.handleFormChange, width: 3, icon: 'usd', iconPosition: 'left', error: priceError }),
             React.createElement(_semanticUiReact.Form.Button, { content: 'Submit' })

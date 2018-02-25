@@ -35,7 +35,8 @@ var AdminPage = React.createClass({
     axios.post('/inventory', {
       name: item.name,
       stock: item.stock,
-      price: item.price
+      price: item.price,
+      category: item.category
     }, {
       headers: {
         'x-auth': localStorage.getItem('token')

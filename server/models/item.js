@@ -12,6 +12,10 @@ var Item = mongoose.model('Item', {
   stock: {
     type: Number,
     required: true
+  },
+  category: {
+    type: String,
+    required: true
   }
 });
 

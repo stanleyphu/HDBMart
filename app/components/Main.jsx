@@ -7,7 +7,7 @@ var ProductTable = require('ProductTable');
 var ShoppingCart = require('ShoppingCart');
 var InventoryAPI = require('InventoryAPI');
 
-import { Header, Container, Divider, Button } from 'semantic-ui-react'
+import { Header, Container, Divider, Button, Segment } from 'semantic-ui-react'
 import { Link } from 'react-router'
 
 var Main = React.createClass({
@@ -98,9 +98,32 @@ var Main = React.createClass({
         );
     };
 
+    let breakfastInventory = this.state.inventory.filter((item) => {
+      return item.category == 'Breakfast';
+    })
+
+    let chipsInventory = this.state.inventory.filter((item) => {
+      return item.category == 'Chips';
+    })
+
+    let snacksInventory = this.state.inventory.filter((item) => {
+      return item.category == 'Snacks';
+    })
+
+    let drinksInventory = this.state.inventory.filter((item) => {
+      return item.category == 'Drinks';
+    })
+
     return (
       <div>
-        <ProductTable onAddItem={this.handleAddItem} inventory={this.state.inventory}/>
+        <Header as="h2" textAlign="center">Breakfast</Header>
+        <ProductTable onAddItem={this.handleAddItem} inventory={breakfastInventory}/>
+        <Header as="h2" textAlign="center">Chips</Header>
+        <ProductTable onAddItem={this.handleAddItem} inventory={chipsInventory}/>
+        <Header as="h2" textAlign="center">Snacks</Header>
+        <ProductTable onAddItem={this.handleAddItem} inventory={snacksInventory}/>
+        <Header as="h2" textAlign="center">Drinks</Header>
+        <ProductTable onAddItem={this.handleAddItem} inventory={drinksInventory}/>
         {renderShoppingCart()}
       </div>
     );

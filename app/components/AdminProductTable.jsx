@@ -20,9 +20,16 @@ class AdminProductTable extends React.Component {
   } 
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      data: nextProps.inventory
-    });
+    if (this.state.column != null) {
+      this.setState({
+        data: _.sortBy(nextProps.inventory, [this.state.column])
+      });
+    }
+    else {
+      this.setState({
+        data: nextProps.inventory
+      });
+    }
   }
 
   handleIncreaseStock (id) {
@@ -60,11 +67,13 @@ class AdminProductTable extends React.Component {
     const { column, data, direction } = this.state;
     var {inventory} = this.props;
 
+    console.log(data);
+
     var renderAdminInventory = () => {
       return data.map((item) => {
         var priceValue = item.price.toFixed(2);
         return (
-          <AdminInventoryItem key={item._id} name={item.name} price={priceValue} stock={item.stock} onIncreaseStock={this.handleIncreaseStock} onDecreaseStock={this.handleDecreaseStock} onDeleteItem={this.handleDeleteItem}/>
+          <AdminInventoryItem key={item._id} category={item.category} name={item.name} price={priceValue} stock={item.stock} onIncreaseStock={this.handleIncreaseStock} onDecreaseStock={this.handleDecreaseStock} onDeleteItem={this.handleDeleteItem}/>
         );
       });
     };
@@ -74,6 +83,7 @@ class AdminProductTable extends React.Component {
         <Table sortable celled striped color="blue" size="large">
           <Table.Header>
             <Table.Row>
+              <Table.HeaderCell sorted={column ==='category' ? direction : null} onClick={this.handleSort.bind(this, 'category')}>Category</Table.HeaderCell>
               <Table.HeaderCell width={6} sorted={column === 'product' ? direction : null} onClick={this.handleSort.bind(this, 'name')}>Product</Table.HeaderCell>
               <Table.HeaderCell width={3} sorted={column === 'price' ? direction : null} onClick={this.handleSort.bind(this, 'price')}>Price</Table.HeaderCell>
               <Table.HeaderCell width={4} sorted={column === 'stock' ? direction : null} onClick={this.handleSort.bind(this, 'stock')}>Stock</Table.HeaderCell>
@@ -84,14 +94,6 @@ class AdminProductTable extends React.Component {
           </Table.Header>
           <Table.Body>
             {renderAdminInventory()}
-            <Table.Row>
-              <Table.Cell></Table.Cell>
-              <Table.Cell>*Stock levels may not be up to date.</Table.Cell>
-              <Table.Cell></Table.Cell>
-              <Table.Cell></Table.Cell>
-              <Table.Cell></Table.Cell>
-              <Table.Cell></Table.Cell>
-            </Table.Row>
           </Table.Body>
         </Table>
       </Segment>

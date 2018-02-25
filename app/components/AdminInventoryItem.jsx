@@ -30,7 +30,7 @@ class AdminInventoryItem extends React.Component {
   }
 
   render() {
-    var {name, price, stock} = this.props;
+    var {category, name, price, stock} = this.props;
     var progressStatus, width;
 
     if (stock >= 10) {
@@ -48,14 +48,15 @@ class AdminInventoryItem extends React.Component {
 
     return (
       <Table.Row>
+        <Table.Cell>{category}</Table.Cell>
         <Table.Cell>{name}</Table.Cell>
         <Table.Cell>${price}</Table.Cell>
         <Table.Cell>
             <Progress percent={width} style={{'marginBottom': '0px'}} color={progressStatus}>{stock}</Progress>
         </Table.Cell>
-        <Table.Cell><Button primary onClick={this.handleIncreaseStock} id={name}>Add</Button></Table.Cell>
-        <Table.Cell><Button primary onClick={this.handleDecreaseStock} id={name}>Decrease</Button></Table.Cell>
-        <Table.Cell><Button color="red" onClick={this.handleDeleteItem} id={name}>Delete</Button></Table.Cell>
+        <Table.Cell><Button primary onClick={this.handleIncreaseStock} id={name}>+</Button></Table.Cell>
+        <Table.Cell><Button primary onClick={this.handleDecreaseStock} id={name}>-</Button></Table.Cell>
+        <Table.Cell><Button color="red" onClick={this.handleDeleteItem} id={name}>X</Button></Table.Cell>
       </Table.Row>
     )
   }
